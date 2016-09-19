@@ -17,9 +17,11 @@ class CreateSigninSocialTable extends Migration
           //$table->engine = 'InnoDB'; Activar para MySQL
           $table->increments('network_id')
                 ->comment('Identificador de la red social');
-          $table->bigInteger('network_user_id')
+          $table->string('network_user_id')
+                ->nullable()
                 ->comment('Identificador recibido de la red social');
           $table->string('network_name', 30)
+                ->nullable()
                 ->comment('Nombre de la Red Social');
           $table->integer('network_user_fk')
                 ->comment('Usuario asociado');

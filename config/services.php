@@ -35,4 +35,11 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    /*Socialite*/
+    'facebook' => [
+    'client_id' => '1754907181414122',
+    'client_secret' => '6614c397d8b92fa2acfe4148e2f3b462',
+    'redirect' => 'http://localhost:8080/xpheredesign/public/facebook/callback',
+    ],
+
 ];

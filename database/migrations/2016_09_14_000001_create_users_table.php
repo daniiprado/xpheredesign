@@ -20,17 +20,21 @@ class CreateUsersTable extends Migration
                   ->unsigned()
                   ->comment('Identifica el Tipo de Usuario');
             $table->string('user_nickname', 80)
+                  ->nullable()
                   ->comment('Nickname');
             $table->string('name', 80)
                   ->comment('Nombres del Usuario');
             $table->string('user_lastname', 80)
+                  ->nullable()
                   ->comment('Apellidos del Usuario');
             $table->string('user_phone', 12)
+                  ->nullable()
                   ->comment('Teléfono del Usuario');
             $table->string('email')
                   ->unique()
                   ->comment('Correo del Usuario');
             $table->string('password')
+                  ->nullable()
                   ->comment('Contraseña del Usuario');
             $table->rememberToken()
                   ->comment('Token para procesar el Inicio de Sesión');

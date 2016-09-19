@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Bogota',
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -180,6 +180,9 @@ return [
         xpheredesign\Providers\EventServiceProvider::class,
         xpheredesign\Providers\RouteServiceProvider::class,
 
+        /*Socialite*/
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
     ],
 
     /*
@@ -230,6 +233,9 @@ return [
         /*laravelcollective*/
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        /*Socialite*/
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

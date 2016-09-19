@@ -6,19 +6,19 @@
 
         <h3>Ingrese a su cuenta</h3>
 
-        <div class="col_full">
-          {!! Form:: label('login-username', 'Correo Electrónico:') !!}
+        <div id="log-email" class="col_full">
+          {!! Form:: label('login-form-username', 'Correo Electrónico:') !!}
           {!! Form:: email('email', null, ['id' => 'login-username', 'class' => 'form-control']) !!}
         </div>
 
-        <div class="col_full">
+        <div id="log-password" class="col_full">
           {!! Form:: label('login-form-password', 'Contraseña:') !!}
           {!! Form:: password('password', ['id' => 'login-password', 'class' => 'form-control']) !!}
         </div>
 
         <div class="col_full nobottommargin">
       <button class="button button-3d button-black nomargin" id="btn-login" name="register-form-submit" value="register">Register Now</button>
-          <a href="#" class="social-icon si-facebook">
+          <a href="{{ url('facebook') }}" class="social-icon si-facebook">
           	<i class="icon-facebook"></i>
           	<i class="icon-facebook"></i>
           </a>
@@ -41,38 +41,38 @@
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, vel odio non dicta provident sint ex autem mollitia dolorem illum repellat ipsum aliquid illo similique sapiente fugiat minus ratione.</p>
 
-      <div class="col_half">
+      <div id="regisname" class="col_half">
         {!! Form:: label('register-form-name', 'Nombre:') !!}
-        {!! Form:: text('register-form-name', null, ['id' => 'register-name', 'class' => 'form-control']) !!}
+        {!! Form:: text('regisname', null, ['id' => 'register-name', 'class' => 'form-control']) !!}
       </div>
 
       <div class="col_half col_last">
         {!! Form:: label('register-form-lastname', 'Apellido:') !!}
-        {!! Form:: text('register-form-lastname', null, ['id' => 'register-lastname', 'class' => 'form-control']) !!}
+        {!! Form:: text('regislastname', null, ['id' => 'register-lastname', 'class' => 'form-control']) !!}
       </div>
 
       <div class="clear"></div>
 
       <div class="col_half">
         {!! Form:: label('register-form-email', 'Correo Electrónico:') !!}
-        {!! Form:: email('email', null, ['id' => 'register-email', 'class' => 'form-control']) !!}
+        {!! Form:: email('regisemail', null, ['id' => 'register-email', 'class' => 'form-control']) !!}
       </div>
 
       <div class="col_half  col_last">
-        <label for="register-form-username">Nombre de Usuario:</label>
-        <input type="text" id="register-form-username" name="register-form-username" value="" class="form-control" />
+        {!! Form:: label('register-form-username', 'Nombre de Usuario:') !!}
+        {!! Form:: text('regisusername', null, ['id' => 'register-username', 'class' => 'form-control']) !!}
       </div>
 
       <div class="clear"></div>
 
       <div class="col_half">
         {!! Form:: label('register-form-password', 'Contraseña:') !!}
-        {!! Form:: password('register-form-password', ['id' => 'register-password', 'class' => 'form-control']) !!}
+        {!! Form:: password('regispassword', ['id' => 'register-password', 'class' => 'form-control']) !!}
       </div>
 
       <div class="col_half col_last">
         {!! Form:: label('register-form-repassword', 'Repetir Contraseña:') !!}
-        {!! Form:: password('register-form-repassword', ['id' => 'register-repassword', 'class' => 'form-control']) !!}
+        {!! Form:: password('regisrepassword', ['id' => 'register-repassword', 'class' => 'form-control']) !!}
       </div>
 
       <div class="clear"></div>

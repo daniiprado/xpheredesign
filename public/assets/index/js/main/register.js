@@ -11,9 +11,8 @@ tpj(document).ready(function(){
       var password = tpj("#register-password").val();
       var repassword = tpj("#register-repassword").val();
 
-
       if(password==repassword){
-        var route = "/xpheredesign/public/registerstore";
+        var route = "/xpheredesign/public/register";
         var token = tpj("#token").val();
 
         tpj.ajax({
@@ -23,23 +22,24 @@ tpj(document).ready(function(){
           dataType: 'json',
           data: {user_type_fk: 1,
                  user_nickname: username,
-                 user_firstname: name,
+                 name: name,
                  user_lastname: lastname,
                  email: email,
                  password: password
                 },
           succes: function(data, textStatus, jqXHR){
-            alert('wii');
+
           },
           error: function(msj){
-            //tpj("#msj").html(msj.responseJSON.genre);
-            //tpj('#msj-error').fadeIn();
-            alert('error');
+
           }
         }).done(function( data, textStatus, jqXHR ) {
             if(data.mensaje== 'true'){
-              window.location('admin');
+              window.location.href = "/xpheredesign/public/login";
             }
+        }).fail( function( jqXHR ) {
+          /*Error de campos*/
+          alert('error');
         });
       }
 

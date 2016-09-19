@@ -289,5 +289,4 @@
 <!-- END DASHBOARD STATS 1-->
 <script type="text/javascript">
   Layout.initContent();
-  Layout.initContent();
 </script>

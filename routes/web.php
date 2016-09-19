@@ -16,12 +16,13 @@ Route::resource('/', 'FrontEndController');
 Route::resource('login', 'AuthController');
 /*Index Ajax*/
 Route::resource('log', 'AuthController@searchUserlog');
+Route::resource('register', 'AuthController@registerUser');
 
 
 
 /*Redes Sociales*/
-Route::get('facebook', 'IndexLoginController@redirectToProvider');
-Route::get('facebook/callback', 'IndexLoginController@handleProviderCallback');
+Route::get('facebook', 'AuthController@redirectToProvider');
+Route::get('facebook/callback', 'AuthController@handleProviderCallback');
 
 /*Admin*/
 Route::resource('admin', 'BackEndController');
