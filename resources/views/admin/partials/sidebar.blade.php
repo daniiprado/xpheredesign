@@ -52,13 +52,13 @@
               </a>
               <ul class="sub-menu">
                   <li class="nav-item start ">
-                      <a href="adduser" class="ajaxify nav-link">
+                      <a href="profile" class="ajaxify nav-link">
                           <i class="icon-user"></i>
                           <span class="title">Perfil</span>
                       </a>
                   </li>
                   <li class="nav-item start ">
-                      <a href="profile" class="ajaxify nav-link">
+                      <a href="adduser" class="ajaxify nav-link">
                           <i class="fa fa-user-plus"></i>
                           <span class="title">Agregar nuevo</span>
                       </a>

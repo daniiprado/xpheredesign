@@ -26,11 +26,17 @@ Route::get('facebook/callback', 'AuthController@handleProviderCallback');
 
 /*Admin*/
 Route::resource('admin', 'BackEndController');
+
 /*Admin Ajax*/
 Route::resource('profile', 'AdmProfileUserController');
+
 Route::resource('alluser', 'AdmAllUserController');
+Route::resource('alluser/all', 'AdmAllUserController@show');
+
 Route::resource('adduser', 'AdmAddUserController');
+
 Route::resource('typesusers', 'AdmTypesUserController');
+Route::resource('typesuser/all', 'AdmTypesUserController@show');
 
 /*NotFound*/
 Route::pattern('NotFound', '.*');

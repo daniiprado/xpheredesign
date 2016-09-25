@@ -2,11 +2,11 @@
 <div class="page-bar">
     <ul class="page-breadcrumb">
         <li>
-            <a href="index.html">Home</a>
+            <a href="index.html">Inicio</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>
-            <span>Dashboard</span>
+            <span></span>
         </li>
     </ul>
 </div>

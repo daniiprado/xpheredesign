@@ -35,7 +35,7 @@ var Datatable = function() {
 
             // default settings
             options = $.extend(true, {
-                src: "", // actual table  
+                src: "", // actual table
                 filterApplyAction: "filter",
                 filterCancelAction: "filter_cancel",
                 resetGroupActionInputOnSuccess: true,
@@ -45,22 +45,22 @@ var Datatable = function() {
                     "pageLength": 10, // default records per page
                     "language": { // language settings
                         // metronic spesific
-                        "metronicGroupActions": "_TOTAL_ records selected:  ",
-                        "metronicAjaxRequestGeneralError": "Could not complete request. Please check your internet connection",
+                        "metronicGroupActions": "_TOTAL_ registros seleccionados:  ",
+                        "metronicAjaxRequestGeneralError": "No se ha podido completar la solicitud. Por favor revise su conexion a internet",
 
                         // data tables spesific
                         "lengthMenu": "<span class='seperator'>|</span>View _MENU_ records",
                         "info": "<span class='seperator'>|</span>Found total _TOTAL_ records",
-                        "infoEmpty": "No records found to show",
-                        "emptyTable": "No data available in table",
-                        "zeroRecords": "No matching records found",
+                        "infoEmpty": "No se encontraron registros para mostrar",
+                        "emptyTable": "Ningún dato disponible en esta tabla",
+                        "zeroRecords": "No se encontraron resultados",
                         "paginate": {
-                            "previous": "Prev",
-                            "next": "Next",
-                            "last": "Last",
-                            "first": "First",
-                            "page": "Page",
-                            "pageOf": "of"
+                            "previous": "Anterior",
+                            "next": "Siguiente",
+                            "last": "Ultimo",
+                            "first": "Primero",
+                            "page": "Pagina",
+                            "pageOf": "de"
                         }
                     },
 

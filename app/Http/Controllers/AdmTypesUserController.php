@@ -5,6 +5,7 @@ namespace xpheredesign\Http\Controllers;
 use Illuminate\Http\Request;
 
 use xpheredesign\Http\Requests;
+use Illuminate\Support\Facades\DB;
 
 class AdmTypesUserController extends Controller
 {
@@ -47,9 +48,12 @@ class AdmTypesUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $types = DB::table('tbl_Users_Types')->get();
+        return response()->json(
+            $types->toArray()
+        );
     }
 
     /**

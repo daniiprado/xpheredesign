@@ -18,10 +18,21 @@
 <script src="{{ asset('assets/admin/global/plugins/datatables/datatables.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/admin/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/admin/pages/scripts/table-datatables-responsive.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/admin/global/plugins/select2/js/select2.full.min.js') }}" type="text/javascript"></script><!--NewUser-->
+<script src="{{ asset('assets/admin/global/plugins/jquery-validation/js/jquery.validate.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/admin/global/plugins/jquery-validation/js/additional-methods.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/admin/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js') }}" type="text/javascript"></script>
+
+
 <!-- END PAGE LEVEL PLUGINS / FIN PLUGIN NIVEL DE PAGINA -->
 <!-- BEGIN THEME GLOBAL SCRIPTS / INICIO SCRIPTS GLOBALES -->
 <script src="{{ asset('assets/admin/global/scripts/app.min.js') }}" type="text/javascript"></script>
 <!-- END THEME GLOBAL SCRIPTS / INICIO SCRIPTS GLOBALES  -->
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+<!-- END PAGE LEVEL SCRIPTS -->
+
 <!-- BEGIN THEME LAYOUT SCRIPTS / INICIO DE SCRIPTS DE PRESENTACION -->
 <script src="{{ asset('assets/admin/layouts/layout/scripts/layout.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/admin/layouts/layout/scripts/demo.min.js') }}" type="text/javascript"></script>

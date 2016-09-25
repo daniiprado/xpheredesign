@@ -7,16 +7,16 @@ var TableDatatablesResponsive = function () {
             // Internationalisation. For more info refer to http://datatables.net/manual/i18n
             "language": {
                 "aria": {
-                    "sortAscending": ": activate to sort column ascending",
-                    "sortDescending": ": activate to sort column descending"
+                    "sortAscending": ": activar para ordenar la columna ascendente",
+                    "sortDescending": ": activar para ordenar la columna descendente"
                 },
-                "emptyTable": "No data available in table",
-                "info": "Showing _START_ to _END_ of _TOTAL_ entries",
-                "infoEmpty": "No entries found",
-                "infoFiltered": "(filtered1 from _MAX_ total entries)",
-                "lengthMenu": "_MENU_ entries",
-                "search": "Search:",
-                "zeroRecords": "No matching records found"
+                "emptyTable": "No hay datos disponibles en la tabla",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+                "infoEmpty": "Entradas no encontradas",
+                "infoFiltered": "(filtrado de _MAX_ entradas en total)",
+                "lengthMenu": "_MENU_ entradas",
+                "search": "Buscar:",
+                "zeroRecords": "No se encontraron registros coincidentes"
             },
 
             // Or you can use remote translation file
@@ -34,14 +34,14 @@ var TableDatatablesResponsive = function () {
             // setup responsive extension: http://datatables.net/extensions/responsive/
             responsive: {
                 details: {
-                   
+
                 }
             },
 
             "order": [
                 [0, 'asc']
             ],
-            
+
             "lengthMenu": [
                 [5, 10, 15, 20, -1],
                 [5, 10, 15, 20, "All"] // change per page values here
@@ -52,8 +52,8 @@ var TableDatatablesResponsive = function () {
             "dom": "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>", // horizobtal scrollable datatable
 
             // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
-            // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js). 
-            // So when dropdowns used the scrollable div should be removed. 
+            // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
+            // So when dropdowns used the scrollable div should be removed.
             //"dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
         });
     }
@@ -103,7 +103,7 @@ var TableDatatablesResponsive = function () {
             } ],
 
             order: [ 1, 'asc' ],
-            
+
             // pagination control
             "lengthMenu": [
                 [5, 10, 15, 20, -1],
@@ -116,8 +116,8 @@ var TableDatatablesResponsive = function () {
             "dom": "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>", // horizobtal scrollable datatable
 
             // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
-            // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js). 
-            // So when dropdowns used the scrollable div should be removed. 
+            // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
+            // So when dropdowns used the scrollable div should be removed.
             //"dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
         });
     }
@@ -156,14 +156,14 @@ var TableDatatablesResponsive = function () {
             // setup responsive extension: http://datatables.net/extensions/responsive/
             responsive: {
                 details: {
-                   
+
                 }
             },
 
             "order": [
                 [0, 'asc']
             ],
-            
+
             "lengthMenu": [
                 [5, 10, 15, 20, -1],
                 [5, 10, 15, 20, "All"] // change per page values here
@@ -174,8 +174,8 @@ var TableDatatablesResponsive = function () {
             "dom": "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>", // horizobtal scrollable datatable
 
             // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
-            // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js). 
-            // So when dropdowns used the scrollable div should be removed. 
+            // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
+            // So when dropdowns used the scrollable div should be removed.
             //"dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
         });
     }
@@ -214,14 +214,14 @@ var TableDatatablesResponsive = function () {
             // setup responsive extension: http://datatables.net/extensions/responsive/
             responsive: {
                 details: {
-                   
+
                 }
             },
 
             "order": [
                 [0, 'asc']
             ],
-            
+
             "lengthMenu": [
                 [5, 10, 15, 20, -1],
                 [5, 10, 15, 20, "All"] // change per page values here
@@ -232,12 +232,12 @@ var TableDatatablesResponsive = function () {
             "dom": "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>", // horizobtal scrollable datatable
 
             // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
-            // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js). 
-            // So when dropdowns used the scrollable div should be removed. 
+            // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js).
+            // So when dropdowns used the scrollable div should be removed.
             //"dom": "<'row' <'col-md-12'T>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r>t<'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>",
         });
     }
-    
+
 
     return {
 

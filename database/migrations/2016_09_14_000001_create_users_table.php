@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
                   ->comment('Identifica el Tipo de Usuario');
             $table->string('user_nickname', 80)
                   ->nullable()
-                  ->comment('Nickname');
+                  ->comment('Nombre de usuario');
             $table->string('name', 80)
                   ->comment('Nombres del Usuario');
             $table->string('user_lastname', 80)
@@ -33,6 +33,9 @@ class CreateUsersTable extends Migration
             $table->string('email')
                   ->unique()
                   ->comment('Correo del Usuario');
+            $table->string('user_web', 100)
+                  ->nullable()
+                  ->comment('Sitio Web');
             $table->string('password')
                   ->nullable()
                   ->comment('Contraseña del Usuario');

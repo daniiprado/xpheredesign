@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use xpheredesign\Http\Requests;
 
+use xpheredesign\User;
+use Illuminate\Support\Facades\DB;
+
 class AdmAllUserController extends Controller
 {
     /**
@@ -16,7 +19,7 @@ class AdmAllUserController extends Controller
    public function index(Request $request)
    {
      if($request->ajax()){
-       return view('admin.content.adduser');
+       return view('admin.content.alluser');
      }
    }
 
@@ -47,9 +50,16 @@ class AdmAllUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+      $users = DB::table('tbl_Users')
+              ->join('tbl_Users_Types', 'tbl_Users.user_type_fk', '=', 'tbl_Users_Types.type_id')
+              ->select('tbl_Users.id', 'tbl_Users.name', 'tbl_Users.user_lastname', 'tbl_Users.email', 'tbl_Users_Types.type_name')
+              ->get();
+      return response()->json(
+          $users->toArray()
+      );
+
     }
 
     /**

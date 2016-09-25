@@ -17,7 +17,9 @@ class CreateUsersTypesTable extends Migration
         //$table->engine = 'InnoDB'; Activar para MySQL
         $table->increments('type_id')
               ->comment('Identificador del Tipo de Usuario');
-        $table->string('type_name', 60)
+        $table->string('type_name')
+              ->comment('Nombre del tipo de usuario');
+       $table->string('type_description', 60)
               ->comment('Descripción del tipo de usuario');
         $table->timestamps();
       });
