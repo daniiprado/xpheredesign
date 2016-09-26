@@ -5,10 +5,10 @@ namespace xpheredesign\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use xpheredesign\Http\Requests;
-
+/*Models*/
 use xpheredesign\User;
 use xpheredesign\Signin_Social;
-
+/*Redes Sociales*/
 use Socialite;
 
 
@@ -28,7 +28,7 @@ class AuthController extends Controller
     {
       if($request->ajax()){
 
-        $validation = $this->validate($request, [
+         $validation = $this->validate($request, [
              'email' => 'required',
              'password' => 'required',
          ]);
@@ -111,6 +111,7 @@ class AuthController extends Controller
       }
       $user = Signin_Social::where('network_user_id', $socialUser->getId())->first();
       if(!$user){
+        /*Crea Usuario*/
         User::Create([
             'email' => $socialUser->getEmail(),
             'user_type_fk' => 1,
@@ -118,6 +119,7 @@ class AuthController extends Controller
             'name' => $socialUser->getName(),
             'user_lastname' => '',
           ]);
+        /*Consulta el ultimo id del modelo Usuario*/
         $id = User::all() -> last() -> id;
         Signin_Social::Create([
             'network_user_id' => $socialUser->getId(),

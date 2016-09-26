@@ -12,31 +12,31 @@
 */
 
 /*Index*/
-Route::resource('/', 'FrontEndController');
-Route::resource('login', 'AuthController');
+Route::resource('/', 'FrontEndController'); /* Direcciona pagina principal */
+Route::resource('login', 'AuthController'); /* Direcciona pagina principal/inicio de sesion */
 /*Index Ajax*/
-Route::resource('log', 'AuthController@searchUserlog');
-Route::resource('register', 'AuthController@registerUser');
-
-
-
+Route::post('log', 'AuthController@searchUserlog'); /* Inicio de sesion */
+Route::post('register', 'AuthController@registerUser'); /* Resgistro usuario desde pagina principal */
 /*Redes Sociales*/
-Route::get('facebook', 'AuthController@redirectToProvider');
-Route::get('facebook/callback', 'AuthController@handleProviderCallback');
+Route::get('facebook', 'AuthController@redirectToProvider'); /* Inicio de sesion facebook */
+Route::get('facebook/callback', 'AuthController@handleProviderCallback'); /* Inicio de sesion facebook */
+
 
 /*Admin*/
-Route::resource('admin', 'BackEndController');
-
+Route::resource('admin', 'BackEndController'); /* Direcciona pagina admin */
 /*Admin Ajax*/
-Route::resource('profile', 'AdmProfileUserController');
+Route::resource('profile', 'AdmProfileUserController'); /* Direcciona pagina admin/usuario/perfil */
 
-Route::resource('alluser', 'AdmAllUserController');
-Route::resource('alluser/all', 'AdmAllUserController@show');
+Route::resource('alluser', 'AdmAllUserController'); /* Direcciona pagina admin/usuario/todos los usuarios */
+Route::get('alluser/all', 'AdmAllUserController@show'); /* Direcciona pagina admin/usuario/todos los usuarios, muestra todos los usuarios*/
+Route::post('updateuser/{id}', 'AdmAllUserController@update'); /*Direcciona pagina ajax modificar usuario*/
+Route::post('deleteuser/{id}', 'AdmAllUserController@destroy'); /*Direcciona pagina ajax modificar usuario*/
 
-Route::resource('adduser', 'AdmAddUserController');
+Route::resource('adduser', 'AdmAddUserController'); /* Direcciona pagina admin/usuario/agregar nuevo*/
+Route::post('adduser/register', 'AdmAddUserController@store'); /* Registra nueva usuario*/
 
-Route::resource('typesusers', 'AdmTypesUserController');
-Route::resource('typesuser/all', 'AdmTypesUserController@show');
+Route::resource('typesusers', 'AdmTypesUserController'); /* Direcciona pagina admin/usuario/todos los usuarios*/
+Route::resource('typesuser/all', 'AdmTypesUserController@show'); /*Muestra todos los usuarios*/
 
 /*NotFound*/
 Route::pattern('NotFound', '.*');

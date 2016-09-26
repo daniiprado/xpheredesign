@@ -5,6 +5,7 @@ namespace xpheredesign\Http\Controllers;
 use Illuminate\Http\Request;
 
 use xpheredesign\Http\Requests;
+/*BD*/
 use Illuminate\Support\Facades\DB;
 
 class AdmTypesUserController extends Controller

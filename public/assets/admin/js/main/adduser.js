@@ -35,7 +35,7 @@ var FormWizard = function () {
                 focusInvalid: false, // do not focus the last invalid input
                 rules: {
                     //account
-                    name: {
+                    /*name: {
                         minlength: 5,
                         required: true
                     },
@@ -57,6 +57,7 @@ var FormWizard = function () {
                         equalTo: "#submit_form_password"
                     },
                     email: {
+                        email: true,
                         required: true
                     },
                     //profile
@@ -71,7 +72,7 @@ var FormWizard = function () {
                     },
                     remarks: {
                         minlength: 5
-                    },
+                    },*/
                     //payment
                     'payment[]': {
                         required: true,
@@ -227,7 +228,7 @@ var FormWizard = function () {
 
             $('#form_wizard_1').find('.button-previous').hide();
             $('#form_wizard_1 .button-submit').click(function () {
-                alert('Finished! Hope you like it :)');
+                loadinfo();
             }).hide();
 
             //apply validation on select2 dropdown value change, this only needed for chosen dropdown integration.
@@ -243,3 +244,56 @@ var FormWizard = function () {
 jQuery(document).ready(function() {
     FormWizard.init();
 });
+
+/*CARRGA LA INFORMACION*/
+function loadinfo(){
+  var name = $('input:text[id=username]').val();
+  var apell = $('input:text[id=userapell]').val();
+  var phone = $('input:text[id=userphone]').val();
+  var password = $('input:password[id=submit_form_password]').val();
+  var email = $('input:text[id=useremail]').val();
+  var nickname = $('input:text[id=usernikname]').val();
+  var typeuser = $('input:text[id=country_list]').val();
+  var web = $('input:text[id=userweb]').val();
+  var description = $('input:text[id=userremarks]').val();
+  /*Imagen**/
+  var FileImage =  document.getElementById("userfile");
+  var file= FileImage.files[0];
+
+  var formData = new FormData();
+  formData.append("name",  name);
+  formData.append("user_lastname", apell);
+  formData.append("user_phone", phone);
+  formData.append("password", password);
+  formData.append("email", email);
+  formData.append("typeuser", typeuser);
+  formData.append("user_nickname", nickname);
+  formData.append("user_web", web);
+  formData.append("profile_description", description);
+  formData.append("filename", file);
+
+  var route = "/xpheredesign/public/adduser/register";
+  var token = $("#token").val();
+  $.ajax({
+    url: route,
+    headers: {'X-CSRF-TOKEN': token},
+    cache: false,
+    type: 'POST',
+    contentType:false,
+    data: formData,
+    processData:false,
+
+    succes: function(data, textStatus, jqXHR){
+
+    },
+    error: function(msj){
+
+    }
+  }).done(function( data, textStatus, jqXHR ) {
+      console.log(data);
+  }).fail( function( jqXHR ) {
+    /*Error de campos*/
+    alert('error');
+  });
+
+}

@@ -36,8 +36,9 @@
                                     </span>
                                 </div>
                             </div>
+                            {!! Form:: hidden('register', csrf_token(), ['id' => 'token', 'class' => 'form-control']) !!}
                             <div class="portlet-body form">
-                                <form class="form-horizontal" action="#" id="submit_form" method="POST">
+                              {!! Form::open(['url' => '#', 'method' => 'POST', 'class' => 'form-horizontal', 'id' => 'submit_form', 'files' => true])!!}
                                     <div class="form-wizard">
                                         <div class="form-body">
                                             <ul class="nav nav-pills nav-justified steps">
@@ -85,7 +86,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-4">
-                                                            {!! Form:: text('name', null, ['class' => 'form-control']) !!}
+                                                            {!! Form:: text('name', null, ['class' => 'form-control', 'id' => 'username']) !!}
                                                             <span class="help-block"> Escriba su nombre </span>
                                                         </div>
                                                     </div>
@@ -94,7 +95,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-4">
-                                                            {!! Form:: text('apell', null, ['class' => 'form-control']) !!}
+                                                            {!! Form:: text('apell', null, ['class' => 'form-control', 'id' => 'userapell']) !!}
                                                             <span class="help-block"> Escriba sus apellidos </span>
                                                         </div>
                                                     </div>
@@ -103,7 +104,7 @@
                                                             <span class="">  </span>
                                                         </label>
                                                         <div class="col-md-4">
-                                                            {!! Form:: text('phone', null, ['class' => 'form-control']) !!}
+                                                            {!! Form:: text('phone', null, ['class' => 'form-control', 'id' => 'userphone']) !!}
                                                             <span class="help-block"> Escriba su numero telefonico</span>
                                                         </div>
                                                     </div>
@@ -130,7 +131,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-4">
-                                                            {!! Form:: text('email', null, ['class' => 'form-control']) !!}
+                                                            {!! Form:: text('email', null, ['class' => 'form-control', 'id' => 'useremail']) !!}
                                                             <span class="help-block"> Escriba su dirección de correo electrónico</span>
                                                         </div>
                                                     </div>
@@ -142,7 +143,7 @@
                                                             <span class="required"> * </span>
                                                         </label>
                                                         <div class="col-md-4">
-                                                            {!! Form:: text('nikname', null, ['class' => 'form-control']) !!}
+                                                            {!! Form:: text('nikname', null, ['class' => 'form-control', 'id' => 'usernikname']) !!}
                                                             <span class="help-block"> Escriba su nombre de usuario </span>
                                                         </div>
                                                     </div>
@@ -169,14 +170,14 @@
                                                             <span class="">  </span>
                                                         </label>
                                                         <div class="col-md-4">
-                                                            {!! Form:: text('web', null, ['class' => 'form-control']) !!}
+                                                            {!! Form:: text('web', null, ['class' => 'form-control', 'id' => 'userweb']) !!}
                                                             <span class="help-block"> Escriba su sitio web </span>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label col-md-3">Descripción</label>
                                                         <div class="col-md-4">
-                                                            {!! Form:: textarea('remarks', null, ['class' => 'form-control', 'rows' => '3']) !!}
+                                                            {!! Form:: textarea('remarks', null, ['class' => 'form-control', 'rows' => '3', 'id' => 'userremarks']) !!}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -195,7 +196,7 @@
                                                                     <span class="btn green btn-outline btn-file">
                                                                         <span class="fileinput-new"> Seleccionar imagen </span>
                                                                         <span class="fileinput-exists"> Cambiar </span>
-                                                                        <input type="hidden" value="" name="imageprofile"><input type="file" name=""> </span>
+                                                                        <input type="hidden" value="" name="imageprofile" id="fileimage"><input type="file" name="filename" id="userfile" /></span>
                                                                     <a href="javascript:;" class="btn green fileinput-exists" data-dismiss="fileinput"> Eliminar </a>
                                                                 </div>
                                                               </div>
@@ -267,14 +268,14 @@
                                                     <a href="javascript:;" class="btn btn-outline green button-next"> Continuar
                                                         <i class="fa fa-angle-right"></i>
                                                     </a>
-                                                    <a href="javascript:;" class="btn green button-submit"> Enviar
+                                                    <a href="javascript:;" class="btn green button-submit" id="btn_submit"> Enviar
                                                         <i class="fa fa-check"></i>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                                {!! Form::close() !!}
                             </div>
                         </div>
                     </div>
@@ -289,7 +290,6 @@
 <div class="clearfix"></div>
 <!-- END DASHBOARD STATS 1-->
 
-<script src="{{ asset('assets/admin/js/main/adduser.js') }}" type="text/javascript"></script><!--Wizard-->
 <script type="text/javascript">
   FormWizard.init();
   Layout.initContent();

@@ -162,9 +162,10 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+
         /*laravelcollective*/
         Collective\Html\HtmlServiceProvider::class,
-
+        
         /*
          * Package Service Providers...
          */
@@ -233,6 +234,9 @@ return [
         /*laravelcollective*/
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        /*Imput*/
+        'Input' => Illuminate\Support\Facades\Input::class,
 
         /*Socialite*/
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,

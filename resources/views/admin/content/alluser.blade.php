@@ -16,6 +16,7 @@
     <small>statistics, charts, recent events and reports</small>
 </h1>
 <!-- END PAGE TITLE-->
+{!! Form:: hidden('register', csrf_token(), ['id' => 'token', 'class' => 'form-control']) !!}
 <!-- BEGIN DASHBOARD STATS 1-->
 <div class="row full-height-content full-height-content-scrollable">
    <div class="col-md-12">
@@ -53,9 +54,7 @@
 <div class="clearfix"></div>
 <!-- END DASHBOARD STATS 1-->
 
+<script src="{{ asset('assets/admin/js/main/alluser.js') }}" type="text/javascript"></script>
 <script type="text/javascript">
   Layout.initContent();
 </script>
-
-
-<script src="{{ asset('assets/admin/js/main/alluser.js') }}" type="text/javascript"></script>

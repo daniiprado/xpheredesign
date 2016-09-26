@@ -5,7 +5,7 @@ namespace xpheredesign\Http\Controllers;
 use Illuminate\Http\Request;
 
 use xpheredesign\Http\Requests;
-
+/*Models*/
 use xpheredesign\User;
 use Illuminate\Support\Facades\DB;
 
@@ -50,15 +50,17 @@ class AdmAllUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Request $request)
     {
-      $users = DB::table('tbl_Users')
-              ->join('tbl_Users_Types', 'tbl_Users.user_type_fk', '=', 'tbl_Users_Types.type_id')
-              ->select('tbl_Users.id', 'tbl_Users.name', 'tbl_Users.user_lastname', 'tbl_Users.email', 'tbl_Users_Types.type_name')
-              ->get();
-      return response()->json(
-          $users->toArray()
-      );
+      if($request->ajax()){
+        $users = DB::table('tbl_Users')
+                ->join('tbl_Users_Types', 'tbl_Users.user_type_fk', '=', 'tbl_Users_Types.type_id')
+                ->select('tbl_Users.id', 'tbl_Users.name', 'tbl_Users.user_lastname', 'tbl_Users.email', 'tbl_Users_Types.type_name')
+                ->get();
+        return response()->json(
+            $users->toArray()
+        );
+      }
 
     }
 
@@ -68,9 +70,9 @@ class AdmAllUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -82,7 +84,11 @@ class AdmAllUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      if($request->ajax()){
+        return response()->json([
+          'mensage' => $id
+        ]);
+      }
     }
 
     /**
@@ -91,8 +97,12 @@ class AdmAllUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+      if($request->ajax()){
+        return response()->json([
+          'mensage' => $id
+        ]);
+      }
     }
 }

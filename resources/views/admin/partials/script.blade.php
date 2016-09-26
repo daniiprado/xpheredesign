@@ -30,7 +30,7 @@
 <!-- END THEME GLOBAL SCRIPTS / INICIO SCRIPTS GLOBALES  -->
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-
+<script src="{{ asset('assets/admin/js/main/adduser.js') }}" type="text/javascript"></script><!--Wizard-->
 <!-- END PAGE LEVEL SCRIPTS -->
 
 <!-- BEGIN THEME LAYOUT SCRIPTS / INICIO DE SCRIPTS DE PRESENTACION -->
