@@ -14,6 +14,7 @@
 /*Index*/
 Route::resource('/', 'FrontEndController'); /* Direcciona pagina principal */
 Route::resource('login', 'AuthController'); /* Direcciona pagina principal/inicio de sesion */
+Route::resource('logout', 'AuthController@logout'); /* Direcciona pagina principal/inicio de sesion */
 /*Index Ajax*/
 Route::post('log', 'AuthController@searchUserlog'); /* Inicio de sesion */
 Route::post('register', 'AuthController@registerUser'); /* Resgistro usuario desde pagina principal */

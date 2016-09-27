@@ -24,6 +24,21 @@ class AuthController extends Controller
         return view('index', ['id' => 'Login', 'slid' => 'title']);
     }
 
+    public function logout(Request $request)
+    {
+      if($request->ajax()){
+        Auth::logout();
+        return response()->json([
+          'message' => 'true'
+        ]);
+      }else{
+        return response()->json([
+          'message' => 'false'
+        ]);
+      }
+    }
+
+
     public function searchUserlog(Request $request)
     {
       if($request->ajax()){

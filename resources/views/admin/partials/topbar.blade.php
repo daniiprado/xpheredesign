@@ -327,7 +327,7 @@
                         </li>
                         <li class="divider"> </li>
                         <li>
-                            <a href="javascript:;" onclick="">
+                            <a href="javascript:;" onclick="logout()">
                                 <i class="icon-key"></i> Salir </a>
                         </li>
                     </ul>
