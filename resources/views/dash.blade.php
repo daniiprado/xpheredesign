@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-	@include('admin.content.profile')
+	@include('admin.content.'.$id)
 @endsection

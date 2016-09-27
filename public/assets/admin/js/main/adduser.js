@@ -35,7 +35,7 @@ var FormWizard = function () {
                 focusInvalid: false, // do not focus the last invalid input
                 rules: {
                     //account
-                    /*name: {
+                    name: {
                         minlength: 5,
                         required: true
                     },
@@ -72,7 +72,7 @@ var FormWizard = function () {
                     },
                     remarks: {
                         minlength: 5
-                    },*/
+                    },
                     //payment
                     'payment[]': {
                         required: true,
@@ -256,7 +256,7 @@ function loadinfo(){
   var typeuser = $('input:text[id=country_list]').val();
   var web = $('input:text[id=userweb]').val();
   var description = $('input:text[id=userremarks]').val();
-  /*Imagen**/
+  /*Imagen*/
   var FileImage =  document.getElementById("userfile");
   var file= FileImage.files[0];
 

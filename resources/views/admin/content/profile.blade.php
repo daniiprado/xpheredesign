@@ -26,12 +26,12 @@
           <div class="portlet light profile-sidebar-portlet">
               <!-- SIDEBAR USERPIC -->
               <div class="profile-userpic">
-                  <img src="assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> </div>
+                  <img id="userimage1" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" class="img-responsive" alt=""> </div>
               <!-- END SIDEBAR USERPIC -->
               <!-- SIDEBAR USER TITLE -->
               <div class="profile-usertitle">
-                  <div class="profile-usertitle-name"> Marcus Doe </div>
-                  <div class="profile-usertitle-job"> Developer </div>
+                  <div id="divname" class="profile-usertitle-name"></div>
+                  <div id="divtype" class="profile-usertitle-job"> Developer </div>
               </div>
               <!-- END SIDEBAR USER TITLE -->
               <!-- SIDEBAR MENU -->
@@ -102,26 +102,26 @@
                                   <form role="form" action="#">
                                       <div class="form-group">
                                           <label class="control-label">Nombre</label>
-                                          <input type="text" placeholder="John" class="form-control" /> </div>
+                                          {!! Form:: text('name', null, ['class' => 'form-control', 'id' => 'username']) !!}</div>
                                       <div class="form-group">
                                           <label class="control-label">Apellido</label>
-                                          <input type="text" placeholder="Doe" class="form-control" /> </div>
+                                          {!! Form:: text('apell', null, ['class' => 'form-control', 'id' => 'userapell']) !!}</div>
                                       <div class="form-group">
                                           <label class="control-label">Numero telefonico</label>
-                                          <input type="text" placeholder="+1 646 580 DEMO (6284)" class="form-control" /> </div>
+                                          {!! Form:: text('phone', null, ['class' => 'form-control', 'id' => 'userphone']) !!}</div>
                                       <div class="form-group">
                                           <label class="control-label">Nombre de usuario</label>
-                                          <input type="text" placeholder="Marcus, Marcus1994 etc." class="form-control" /> </div>
+                                          {!! Form:: text('nickname', null, ['class' => 'form-control', 'id' => 'usernickname']) !!}</div>
                                       <div class="form-group">
                                           <label class="control-label">Correo electronico</label>
-                                          <input type="text" placeholder="...@xpheredesign.com" class="form-control" /> </div>
+                                          {!! Form:: text('email', null, ['class' => 'form-control', 'id' => 'useremail']) !!}</div>
                                       <div class="form-group">
                                           <label class="control-label">Información</label>
-                                          <textarea class="form-control" rows="3" placeholder="We are KeenThemes!!!"></textarea>
+                                          <textarea class="form-control" rows="3" id="userdescription"></textarea>
                                       </div>
                                       <div class="form-group">
                                           <label class="control-label">Sitio web</label>
-                                          <input type="text" placeholder="http://www.mywebsite.com" class="form-control" /> </div>
+                                            {!! Form:: text('web', null, ['class' => 'form-control', 'id' => 'userweb']) !!}</div>
                                       <div class="margiv-top-10">
                                           <a href="javascript:;" class="btn green"> Guardar </a>
                                           <a href="javascript:;" class="btn default"> Cancelar </a>
@@ -135,7 +135,7 @@
                                       <div class="form-group">
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                           <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px; line-height: 150px;">
-                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /></div>
+                                            <img id="userimage2" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /></div>
                                           <div>
                                               <span class="btn green btn-outline btn-file">
                                                   <span class="fileinput-new"> Seleccionar imagen </span>
@@ -179,6 +179,7 @@
 </div>
 <div class="clearfix"></div>
 <!-- END DASHBOARD STATS 1-->
+<script src="{{ asset('assets/admin/js/main/profile.js') }}" type="text/javascript"></script>
 <script type="text/javascript">
   Layout.initContent();
 </script>

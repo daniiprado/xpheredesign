@@ -6,8 +6,15 @@ use Illuminate\Http\Request;
 
 use xpheredesign\Http\Requests;
 
+use Illuminate\Support\Facades\Auth;
+use DB;
+
 class AdmProfileUserController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -47,9 +54,18 @@ class AdmProfileUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+      $id = Auth::user()->id;
+      $users = DB::table('tbl_Users')
+              ->join('tbl_Profiles', 'tbl_Profiles.profile_user_id', '=', 'tbl_Users.id')
+              ->join('tbl_Users_Types', 'tbl_Users.user_type_fk', '=', 'tbl_Users_Types.type_id')
+              ->select('tbl_Users.*', 'tbl_Users_Types.*', 'tbl_Profiles.*')
+              ->get();
+      //$val= $users->toJson();
+      return response()->json([
+          'user' => $users
+      ]);
     }
 
     /**

@@ -21,8 +21,10 @@ class CreateProfilesTable extends Migration
                 ->unsigned()
                 ->comment('Identificador del Usuario');
           $table->string('profile_pic', 255)
+                ->nullable()
                 ->comment('Dirección Imágen de Perfil del Usuario');
           $table->text('profile_description')
+                ->nullable()
                 ->comment('Texto que contiene descripción o breve biografía del usuario');
           $table->timestamps();
           // NOTE: Foreign Keys
