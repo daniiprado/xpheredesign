@@ -45,7 +45,8 @@ var FormWizard = function () {
                     },
                     phone: {
                         digits: true,
-                        minlength: 8
+                        minlength: 7,
+                        maxlength: 12
                     },
                     password: {
                         minlength: 5,
@@ -255,8 +256,9 @@ function loadinfo(){
   var nickname = $('input:text[id=usernikname]').val();
   var typeuser = $('input:text[id=country_list]').val();
   var web = $('input:text[id=userweb]').val();
-  var description = $('input:text[id=userremarks]').val();
+  var description = $('#userremarks').val();
   /*Imagen*/
+
   var FileImage =  document.getElementById("userfile");
   var file= FileImage.files[0];
 
@@ -290,7 +292,7 @@ function loadinfo(){
 
     }
   }).done(function( data, textStatus, jqXHR ) {
-      console.log(data);
+
   }).fail( function( jqXHR ) {
     /*Error de campos*/
     alert('error');

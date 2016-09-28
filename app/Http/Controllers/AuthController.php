@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use xpheredesign\Http\Requests;
 /*Models*/
+use xpheredesign\Profiles;
 use xpheredesign\User;
 use xpheredesign\Signin_Social;
 /*Redes Sociales*/
@@ -141,9 +142,26 @@ class AuthController extends Controller
             'network_name' => 'facebook',
             'network_user_fk' => $id,
           ]);
-          return redirect()->intended('admin');;
+        Profiles::Create([
+            'profile_user_id' => $id,
+          ]);
+
+        $id = json_decode(User::select('id')->where('email', '=', $socialUser->getEmail())->get());
+        if(Auth::loginUsingId($id[0]->id))
+        {
+          return redirect()->intended('admin');
+        }else{
+          return redirect()->intended('/');
+        }
+
       }else{
-        return redirect()->intended('admin');
+        $id = json_decode(User::select('id')->where('email', '=', $socialUser->getEmail())->get());
+        if(Auth::loginUsingId($id[0]->id))
+        {
+          return redirect()->intended('admin');
+        }else{
+          return redirect()->intended('/');
+        }
       }
     }
 

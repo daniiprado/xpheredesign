@@ -61,6 +61,7 @@ class AdmProfileUserController extends Controller
               ->join('tbl_Profiles', 'tbl_Profiles.profile_user_id', '=', 'tbl_Users.id')
               ->join('tbl_Users_Types', 'tbl_Users.user_type_fk', '=', 'tbl_Users_Types.type_id')
               ->select('tbl_Users.*', 'tbl_Users_Types.*', 'tbl_Profiles.*')
+              ->where('tbl_Users.id', '=', $id)
               ->get();
       //$val= $users->toJson();
       return response()->json([

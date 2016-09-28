@@ -88,10 +88,6 @@ class AdmAddUserController extends Controller
 
         /*Consulta el ultimo id del modelo Usuario*/
         $id = User::all() -> last() -> id;
-        /*Agrega el usuaria a redes sociales*/
-        Signin_Social::Create([
-            'network_user_fk' => $id,
-        ]);
 
         /*Subimos el archivo*/
         $file->move($path, $randomName);
