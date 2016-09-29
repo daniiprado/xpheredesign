@@ -31,8 +31,8 @@ Route::resource('profile/all', 'AdmProfileUserController@show'); /* Direcciona p
 
 Route::resource('alluser', 'AdmAllUserController'); /* Direcciona pagina admin/usuario/todos los usuarios */
 Route::get('alluser/all', 'AdmAllUserController@show'); /* Direcciona pagina admin/usuario/todos los usuarios, muestra todos los usuarios*/
-Route::post('updateuser/{id}', 'AdmAllUserController@update'); /*Direcciona pagina ajax modificar usuario*/
-Route::post('deleteuser/{id}', 'AdmAllUserController@destroy'); /*Direcciona pagina ajax modificar usuario*/
+Route::get('updateuser/{id}', 'AdmAllUserController@update'); /*Direcciona pagina vista ajax modificar usuario*/
+Route::post('deleteuser/{id}', 'AdmAllUserController@destroy'); /*Direcciona pagina vista modificar usuario*/
 
 Route::resource('adduser', 'AdmAddUserController'); /* Direcciona pagina admin/usuario/agregar nuevo*/
 Route::post('adduser/register', 'AdmAddUserController@store'); /* Registra nueva usuario*/

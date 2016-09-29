@@ -22,7 +22,6 @@ function load(){
     $("#useremail").val(res.user[0].email);
     $("#userdescription").val(res.user[0].profile_description);
     $("#userweb").val(res.user[0].user_web);
-    console.log(res.user[0]);
 
 	}).always(function() {
 

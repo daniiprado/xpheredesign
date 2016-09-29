@@ -6,29 +6,10 @@ $(document).ready(function(){
 function update(btn){
   var value = btn.id;
   var id = value.substring(3);
+  var route = "updateuser/"+id+"/";
 
-  var route = "/xpheredesign/public/updateuser/"+id+"/";
-  var token = $("#token").val();
-  $.ajax({
-    url: route,
-    headers: {'X-CSRF-TOKEN': token},
-    type: 'POST',
-    dataType: 'json',
-    data: {user: id},
-
-    succes: function(data, textStatus, jqXHR){
-
-    },
-    error: function(msj){
-
-    }
-  }).done(function( data, textStatus, jqXHR ) {
-      console.log(data.mensage);
-  }).fail( function( jqXHR ) {
-      /*Error de campos*/
-      alert('error');
-  });
-
+  //Layout.loadAjaxContent('route');
+  $('.page-content-body').load(route);
 }
 
 /*Elimina el usuario*/
@@ -37,28 +18,8 @@ function remove(btn){
   var id = value.substring(4);
 
   var route = "/xpheredesign/public/deleteuser/"+id+"/";
-  var token = $("#token").val();
-  $.ajax({
-    url: route,
-    headers: {'X-CSRF-TOKEN': token},
-    type: 'POST',
-    dataType: 'json',
-    data: {user: id},
-
-    succes: function(data, textStatus, jqXHR){
-
-    },
-    error: function(msj){
-
-    }
-  }).done(function( data, textStatus, jqXHR ) {
-      console.log(data.mensage);
-  }).fail( function( jqXHR ) {
-      /*Error de campos*/
-      alert('error');
-  });
-
-
+  //Layout.loadAjaxContent('route');
+  //$('.page-content-body').load(route);
 }
 
 /*Carga la tabla de todos los usuarios*/
@@ -76,11 +37,11 @@ function load(){
           action += "<ul class='dropdown-menu pull-right'>";
           action += "<li>";
           action += "<a onclick= 'update(this)' id=mod"+value.id+">";
-          action += "<i class='fa fa-print'></i> Modificar </a>";
+          action += "<i class='fa fa-pencil-square-o'></i> Modificar </a>";
           action += "</li>";
           action += "<li>";
           action += "<a onclick= 'remove(this)' id=elim"+value.id+">";
-          action += "<i class='fa fa-print'></i> Eliminar </a>";
+          action += "<i class='fa fa-trash'></i> Eliminar </a>";
           action += "</li>";
           action += "</ul>";
           action += "</div>";

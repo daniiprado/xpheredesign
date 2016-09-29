@@ -27,6 +27,14 @@ class AdmAllUserController extends Controller
      }
    }
 
+   public function indexedit(Request $request)
+   {
+     if($request->ajax()){
+       return view('admin.content.edituser');
+     }
+   }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -89,9 +97,14 @@ class AdmAllUserController extends Controller
     public function update(Request $request, $id)
     {
       if($request->ajax()){
-        return response()->json([
-          'mensage' => $id
-        ]);
+         $users = DB::table('tbl_Users')
+                 ->join('tbl_Profiles', 'tbl_Profiles.profile_user_id', '=', 'tbl_Users.id')
+                 ->join('tbl_Users_Types', 'tbl_Users.user_type_fk', '=', 'tbl_Users_Types.type_id')
+                 ->select('tbl_Users.*', 'tbl_Users_Types.type_name', 'tbl_Profiles.profile_pic', 'tbl_Profiles.profile_description')
+                 ->where('tbl_Users.id', '=', $id)
+                 ->get();
+                 
+        return view('admin.content.edituser', ['users' => $users]);
       }
     }
 
