@@ -10,13 +10,17 @@ function load(){
 	$.get(route, function(res){
 		$(res).each(function(key,value){
       var action = "<div class='btn-group pull-right'>";
-          action += "<button class='btn green btn-xs btn-outline dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>Tools";
+          action += "<button class='btn green btn-xs btn-outline dropdown-toggle' data-toggle='dropdown' aria-expanded='false'>Opciones";
           action += "<i class='fa fa-angle-down'></i>";
           action += "</button>";
           action += "<ul class='dropdown-menu pull-right'>";
           action += "<li>";
-          action += "<a href='javascript:;'>";
-          action += "<i class='fa fa-print'></i> Print </a>";
+          action += "<a onclick= 'update(this)' id=mod>";
+          action += "<i class='fa fa-pencil-square-o'></i> Modificar </a>";
+          action += "</li>";
+          action += "<li>";
+          action += "<a onclick= 'remove(this)' id=elim>";
+          action += "<i class='fa fa-trash'></i> Eliminar </a>";
           action += "</li>";
           action += "</ul>";
           action += "</div>";
