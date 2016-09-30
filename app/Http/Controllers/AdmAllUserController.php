@@ -3,7 +3,7 @@
 namespace xpheredesign\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Input;
 use xpheredesign\Http\Requests;
 /*Models*/
 use xpheredesign\User;
@@ -108,22 +108,84 @@ class AdmAllUserController extends Controller
     {
       if($request->ajax()){
 
+        $path = public_path().'/assets/admin/pages/media/profile';
+        $file = Input::file('filename');
+
+        if($file != null){
+          $pic = Profiles::select('tbl_Profiles.profile_pic')
+                ->where('tbl_Profiles.profile_user_id', '=', $id)
+                ->get();
+
+          $urlImg = $pic[0]->profile_pic;
+          /*Verifica si existe y elimina*/
+          if(file_exists($urlImg)){
+            unlink($urlImg);
+          }
+
+          $namefile =  $file->getClientOriginalName();
+          /*Genera un nombre aleatorio*/
+          $getMime = explode('.', $namefile);
+          $mime = end($getMime);
+          $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
+          $files = DB::table('tbl_Profiles')->where('profile_pic', '=', $randomName )->get();
+
+          /*Consulta si existe y genera uno nuevo*/
+          while (count($files) > 0) {
+            $getMime = explode('.', $namefile);
+            $mime = end($getMime);
+            $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
+            $files = DB::table('tbl_Profiles')->where('profile_pic', '=', $randomName )->get();
+          }
+          /*Verifica si existe el directorio si no lo crea*/
+          if(!is_dir($path)){
+            mkdir($path, 0777);
+          }
+
+          /*Subimos el archivo*/
+          $file->move($path, $randomName);
+          $ruta = "assets/admin/pages/media/profile/".$randomName;
+        }
+
+        /*Tipo de usuario*/
+        $idtype = DB::table('tbl_Users_Types')->where('type_name', '=', 'Administrador')->value('type_id');
+
         $user = User::find($id);
+
+        if($request->get('password') != null){
+          $password = $request->get('password');
+          $user->fill([
+              'password' => bcrypt($password),
+          ]);
+        }
+
         $user->fill([
+            'user_type_fk' => $idtype,
             'user_nickname' => $request->get('user_nickname'),
             'name' => $request->get('name'),
             'user_phone' => $request->get('user_phone'),
             'email' => $request->get('email'),
             'user_web' => $request->get('user_web'),
-            'password' => bcrypt($request->get('password')),
             'user_lastname' => $request->get('user_lastname'),
         ]);
         $user->save();
 
+        if (!isset($ruta)){
+          $ruta = "";
+        }
 
+        $idusu = Profiles::select('tbl_Profiles.profile_id')
+                ->where('profile_user_id', '=', $id)
+                ->get();
 
-        /*Tipo de usuario*/
-        $idtype = DB::table('tbl_Users_Types')->where('type_name', '=', 'Administrador')->value('type_id');
+        $idusu = json_decode($idusu, true);
+
+        $profiles = DB::table('tbl_Profiles')
+            ->where('profile_id', $idusu)
+            ->update(array(
+              'profile_pic' => $ruta,
+              'profile_description' => $request->get('profile_description'),
+             ));
+
 
         return response()->json([
           'mensage' => 'true'

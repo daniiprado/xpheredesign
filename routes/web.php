@@ -27,7 +27,8 @@ Route::get('facebook/callback', 'AuthController@handleProviderCallback'); /* Ini
 Route::resource('admin', 'BackEndController'); /* Direcciona pagina admin */
 /*Admin Ajax*/
 Route::resource('profile', 'AdmProfileUserController'); /* Direcciona pagina admin/usuario/perfil */
-Route::resource('profile/all', 'AdmProfileUserController@show'); /* Direcciona pagina admin/usuario/perfil */
+Route::get('profile/all', 'AdmProfileUserController@show'); /* Direcciona pagina admin/usuario/perfil */
+Route::post('profile/update/{id}', 'AdmProfileUserController@update'); /* Direcciona pagina admin/usuario/perfil */
 
 Route::resource('alluser', 'AdmAllUserController'); /* Direcciona pagina admin/usuario/todos los usuarios */
 Route::get('alluser/all', 'AdmAllUserController@show'); /* Direcciona pagina admin/usuario/todos los usuarios, muestra todos los usuarios*/

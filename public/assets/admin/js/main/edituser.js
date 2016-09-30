@@ -49,12 +49,10 @@ var FormWizardEdit = function () {
                         maxlength: 12
                     },
                     password: {
-                        minlength: 5,
-                        required: true
+                        minlength: 5
                     },
                     rpassword: {
                         minlength: 5,
-                        required: true,
                         equalTo: "#submit_form_password"
                     },
                     email: {

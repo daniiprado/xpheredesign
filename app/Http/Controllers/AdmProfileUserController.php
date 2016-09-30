@@ -3,10 +3,12 @@
 namespace xpheredesign\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Input;
 use xpheredesign\Http\Requests;
 
 use Illuminate\Support\Facades\Auth;
+use xpheredesign\User;
+use xpheredesign\Profiles;
 use DB;
 
 class AdmProfileUserController extends Controller
@@ -89,7 +91,84 @@ class AdmProfileUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      if($request->ajax()){
+
+        $path = public_path().'/assets/admin/pages/media/profile';
+        $file = Input::file('filename');
+
+        if($file != null){
+          $pic = Profiles::select('tbl_Profiles.profile_pic')
+                ->where('tbl_Profiles.profile_user_id', '=', $id)
+                ->get();
+
+          $urlImg = $pic[0]->profile_pic;
+          /*Verifica si existe y elimina*/
+          if(file_exists($urlImg)){
+            unlink($urlImg);
+          }
+
+          $namefile =  $file->getClientOriginalName();
+          /*Genera un nombre aleatorio*/
+          $getMime = explode('.', $namefile);
+          $mime = end($getMime);
+          $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
+          $files = DB::table('tbl_Profiles')->where('profile_pic', '=', $randomName )->get();
+
+          /*Consulta si existe y genera uno nuevo*/
+          while (count($files) > 0) {
+            $getMime = explode('.', $namefile);
+            $mime = end($getMime);
+            $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
+            $files = DB::table('tbl_Profiles')->where('profile_pic', '=', $randomName )->get();
+          }
+          /*Verifica si existe el directorio si no lo crea*/
+          if(!is_dir($path)){
+            mkdir($path, 0777);
+          }
+
+          /*Subimos el archivo*/
+          $file->move($path, $randomName);
+          $ruta = "assets/admin/pages/media/profile/".$randomName;
+        }
+
+
+        $user = User::find($id);
+        $user->fill([
+            'user_nickname' => $request->get('user_nickname'),
+            'name' => $request->get('name'),
+            'user_phone' => $request->get('user_phone'),
+            'email' => $request->get('email'),
+            'user_web' => $request->get('user_web'),
+            'user_lastname' => $request->get('user_lastname'),
+        ]);
+        $user->save();
+
+        $idusu = Profiles::select('tbl_Profiles.profile_id')
+                ->where('profile_user_id', '=', $id)
+                ->get();
+
+        $idusu = json_decode($idusu, true);
+
+
+        if (!isset($ruta)){
+          $profiles = DB::table('tbl_Profiles')
+              ->where('profile_id', $idusu)
+              ->update(array(
+                'profile_description' => $request->get('profile_description'),
+               ));
+        }else{
+          $profiles = DB::table('tbl_Profiles')
+              ->where('profile_id', $idusu)
+              ->update(array(
+                'profile_pic' => $ruta,
+                'profile_description' => $request->get('profile_description'),
+               ));
+        }
+
+        return response()->json([
+            'message' => $id
+        ]);
+      }
     }
 
     /**

@@ -75,6 +75,7 @@
       <!-- END BEGIN PROFILE SIDEBAR -->
       <!-- BEGIN PROFILE CONTENT -->
       <div class="profile-content">
+        {!! Form:: hidden('update', csrf_token(), ['id' => 'token', 'class' => 'form-control']) !!}
           <div class="row">
               <div class="col-md-12">
                   <div class="portlet light ">
@@ -100,6 +101,7 @@
                               <!-- PERSONAL INFO TAB -->
                               <div class="tab-pane active" id="tab_1_1">
                                   <form role="form" action="#">
+                                    {!! Form:: hidden('iduser', csrf_token(), ['id' => 'iduser', 'class' => 'form-control']) !!}
                                       <div class="form-group">
                                           <label class="control-label">Nombre</label>
                                           {!! Form:: text('name', null, ['class' => 'form-control', 'id' => 'username']) !!}</div>
@@ -117,13 +119,13 @@
                                           {!! Form:: text('email', null, ['class' => 'form-control', 'id' => 'useremail']) !!}</div>
                                       <div class="form-group">
                                           <label class="control-label">Información</label>
-                                          <textarea class="form-control" rows="3" id="userdescription"></textarea>
+                                          {!! Form:: textarea('userdescrip', null, ['class' => 'form-control', 'rows' => '3', 'id' => 'userdescrip']) !!}
                                       </div>
                                       <div class="form-group">
                                           <label class="control-label">Sitio web</label>
                                             {!! Form:: text('web', null, ['class' => 'form-control', 'id' => 'userweb']) !!}</div>
                                       <div class="margiv-top-10">
-                                          <a href="javascript:;" class="btn green"> Guardar </a>
+                                          <a href="javascript:;" onclick="update()" class="btn green"> Guardar </a>
                                           <a href="javascript:;" class="btn default"> Cancelar </a>
                                       </div>
                                   </form>
@@ -140,7 +142,7 @@
                                               <span class="btn green btn-outline btn-file">
                                                   <span class="fileinput-new"> Seleccionar imagen </span>
                                                   <span class="fileinput-exists"> Cambiar </span>
-                                                  <input type="hidden" value="" name="..."><input type="file" name=""> </span>
+                                                  <input type="hidden" value="" name="..."><input type="file" id="userfile" name=""> </span>
                                               <a href="javascript:;" class="btn green fileinput-exists" data-dismiss="fileinput"> Eliminar </a>
                                           </div>
                                         </div>
@@ -178,6 +180,7 @@
  </div>
 </div>
 <div class="clearfix"></div>
+<button id="btn-alertprofile" class="btn btn-success mt-sweetalert" data-title="Usuario Creado Correctamente" data-message="..." data-type="success" data-allow-outside-click="true" data-confirm-button-class="btn-success" style="visibility:hidden;">Icon Success Alert</button>
 <!-- END DASHBOARD STATS 1-->
 <script src="{{ asset('assets/admin/js/main/profile.js') }}" type="text/javascript"></script>
 <script type="text/javascript">

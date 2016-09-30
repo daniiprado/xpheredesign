@@ -8,6 +8,7 @@ use xpheredesign\Http\Requests;
 /*Models*/
 use Illuminate\Support\Facades\DB;
 use xpheredesign\User;
+use xpheredesign\Profiles;
 use xpheredesign\Signin_Social;
 
 class AdmAddUserController extends Controller
@@ -51,6 +52,7 @@ class AdmAddUserController extends Controller
         /*Imagen*/
         $path = public_path().'/assets/admin/pages/media/profile';
         $file = Input::file('filename');
+
         if($file != null){
           $namefile =  $file->getClientOriginalName();
           /*Genera un nombre aleatorio*/
@@ -81,7 +83,7 @@ class AdmAddUserController extends Controller
         $idtype = DB::table('tbl_Users_Types')->where('type_name', '=', 'Administrador')->value('type_id');
         /*Inserta datos*/
         User::create([
-           'user_type_fk' => 1,
+           'user_type_fk' => $idtype,
            'user_nickname' => $request->get('user_nickname'),
            'name' => $request->get('name'),
            'user_phone' => $request->get('user_phone'),
@@ -98,7 +100,7 @@ class AdmAddUserController extends Controller
           $ruta = "";
         }
         /*Agrega perfil*/
-        DB::table('tbl_Profiles')->insert([
+        Profiles::create([
            'profile_user_id' => $id,
            'profile_pic' => $ruta,
            'profile_description' => $request->get('profile_description'),
