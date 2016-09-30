@@ -1,4 +1,4 @@
-var FormWizardAdd = function () {
+var FormWizardEdit = function () {
 
 
     return {
@@ -239,6 +239,7 @@ var FormWizardAdd = function () {
 
             /*CARRGA LA INFORMACION*/
             function loadinfo(){
+              var id = $("#iduserEdit").val();
               var name = $('input:text[id=username]').val();
               var apell = $('input:text[id=userapell]').val();
               var phone = $('input:text[id=userphone]').val();
@@ -249,7 +250,6 @@ var FormWizardAdd = function () {
               var web = $('input:text[id=userweb]').val();
               var description = $('#userremarks').val();
               /*Imagen*/
-
               var FileImage =  document.getElementById("userfile");
               var file= FileImage.files[0];
 
@@ -265,7 +265,7 @@ var FormWizardAdd = function () {
               formData.append("profile_description", description);
               formData.append("filename", file);
 
-              var route = "/xpheredesign/public/adduser/register";
+              var route = "/xpheredesign/public/updateuser/"+id;
               var token = $("#token").val();
               $.ajax({
                 url: route,
@@ -284,15 +284,15 @@ var FormWizardAdd = function () {
                 }
               }).done(function( data, textStatus, jqXHR ) {
                 /*Activamos el boton de alerta*/
-                var alert= $('#btn-alertadd');
-                var route = "adduser";
+                var alert= $('#btn-alertedit');
+                var route = "alluser";
                 alert.trigger('click');
                 $('.page-content-body').load(route);
-
               }).fail( function( jqXHR ) {
                 /*Error de campos*/
                 alert('error');
               });
+
             }
 
         }
@@ -302,5 +302,5 @@ var FormWizardAdd = function () {
 }();
 
 jQuery(document).ready(function() {
-    FormWizardAdd.init();
+    FormWizardEdit.init();
 });

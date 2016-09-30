@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use xpheredesign\Http\Requests;
 /*Models*/
 use xpheredesign\User;
+use xpheredesign\Profiles;
 use Illuminate\Support\Facades\DB;
 
 class AdmAllUserController extends Controller
@@ -84,7 +85,16 @@ class AdmAllUserController extends Controller
      */
     public function edit(Request $request, $id)
     {
+      if($request->ajax()){
+         $users = DB::table('tbl_Users')
+                 ->join('tbl_Profiles', 'tbl_Profiles.profile_user_id', '=', 'tbl_Users.id')
+                 ->join('tbl_Users_Types', 'tbl_Users.user_type_fk', '=', 'tbl_Users_Types.type_id')
+                 ->select('tbl_Users.*', 'tbl_Users_Types.type_name', 'tbl_Profiles.profile_pic', 'tbl_Profiles.profile_description')
+                 ->where('tbl_Users.id', '=', $id)
+                 ->get();
 
+        return view('admin.content.edituser', ['users' => $users]);
+      }
     }
 
     /**
@@ -97,14 +107,27 @@ class AdmAllUserController extends Controller
     public function update(Request $request, $id)
     {
       if($request->ajax()){
-         $users = DB::table('tbl_Users')
-                 ->join('tbl_Profiles', 'tbl_Profiles.profile_user_id', '=', 'tbl_Users.id')
-                 ->join('tbl_Users_Types', 'tbl_Users.user_type_fk', '=', 'tbl_Users_Types.type_id')
-                 ->select('tbl_Users.*', 'tbl_Users_Types.type_name', 'tbl_Profiles.profile_pic', 'tbl_Profiles.profile_description')
-                 ->where('tbl_Users.id', '=', $id)
-                 ->get();
-                 
-        return view('admin.content.edituser', ['users' => $users]);
+
+        $user = User::find($id);
+        $user->fill([
+            'user_nickname' => $request->get('user_nickname'),
+            'name' => $request->get('name'),
+            'user_phone' => $request->get('user_phone'),
+            'email' => $request->get('email'),
+            'user_web' => $request->get('user_web'),
+            'password' => bcrypt($request->get('password')),
+            'user_lastname' => $request->get('user_lastname'),
+        ]);
+        $user->save();
+
+
+
+        /*Tipo de usuario*/
+        $idtype = DB::table('tbl_Users_Types')->where('type_name', '=', 'Administrador')->value('type_id');
+
+        return response()->json([
+          'mensage' => 'true'
+        ]);
       }
     }
 

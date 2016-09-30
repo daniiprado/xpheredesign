@@ -20,6 +20,7 @@
 <link href="{{ asset('assets/admin/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/admin/global/plugins/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" /><!--NewUser-->
 <link href="{{ asset('assets/admin/global/plugins/select2/css/select2-bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/admin/global/plugins/bootstrap-sweetalert/sweetalert.css') }}" rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL PLUGINS /FIN DE PLUGINS -->
 <!-- BEGIN THEME GLOBAL STYLES / INICIO DE ESTILOS GLOBALES TEMAS-->
 <link href="{{ asset('assets/admin/global/css/components-rounded.css') }}" rel="stylesheet" id="style_components" type="text/css" />

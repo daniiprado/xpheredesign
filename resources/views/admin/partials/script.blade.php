@@ -22,15 +22,15 @@
 <script src="{{ asset('assets/admin/global/plugins/jquery-validation/js/jquery.validate.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/admin/global/plugins/jquery-validation/js/additional-methods.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/admin/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js') }}" type="text/javascript"></script>
-
-
+<script src="{{ asset('assets/admin/global/plugins/bootstrap-sweetalert/sweetalert.min.js') }}" type="text/javascript"></script><!--Alert-->
 <!-- END PAGE LEVEL PLUGINS / FIN PLUGIN NIVEL DE PAGINA -->
+
 <!-- BEGIN THEME GLOBAL SCRIPTS / INICIO SCRIPTS GLOBALES -->
 <script src="{{ asset('assets/admin/global/scripts/app.min.js') }}" type="text/javascript"></script>
 <!-- END THEME GLOBAL SCRIPTS / INICIO SCRIPTS GLOBALES  -->
 
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="{{ asset('assets/admin/js/main/adduser.js') }}" type="text/javascript"></script><!--Wizard-->
+<script src="{{ asset('assets/admin/js/main/sweetalert.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/admin/js/main/logout.js') }}" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 

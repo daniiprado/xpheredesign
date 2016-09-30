@@ -6,7 +6,7 @@ $(document).ready(function(){
 function update(btn){
   var value = btn.id;
   var id = value.substring(3);
-  var route = "updateuser/"+id+"/";
+  var route = "edituser/"+id+"/";
 
   //Layout.loadAjaxContent('route');
   $('.page-content-body').load(route);

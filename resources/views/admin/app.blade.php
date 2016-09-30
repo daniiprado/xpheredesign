@@ -32,8 +32,7 @@ License: XphereDesign
                 <div class="page-content">
                     @include('admin.partials.themepanel')
                   <div class="page-content-body">
-                    @section('content')
-                    @show
+                    @yield('content')
                   </div>
                 </div>
                 <!-- END CONTENT BODY -->

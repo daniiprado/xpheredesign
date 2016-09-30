@@ -51,28 +51,34 @@ class AdmAddUserController extends Controller
         /*Imagen*/
         $path = public_path().'/assets/admin/pages/media/profile';
         $file = Input::file('filename');
-        $namefile =  $file->getClientOriginalName();
-        /*Genera un nombre aleatorio*/
-        $getMime = explode('.', $namefile);
-        $mime = end($getMime);
-        $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
-        $files = DB::table('tbl_Profiles')->where('profile_pic', '=', $randomName )->get();
-
-        /*Consulta si existe y genera uno nuevo*/
-        while (count($files) > 0) {
+        if($file != null){
+          $namefile =  $file->getClientOriginalName();
+          /*Genera un nombre aleatorio*/
           $getMime = explode('.', $namefile);
           $mime = end($getMime);
           $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
           $files = DB::table('tbl_Profiles')->where('profile_pic', '=', $randomName )->get();
-        }
-        /*Verifica si existe el directorio si no lo crea*/
-        if(!is_dir($path)){
-          mkdir($path, 0777);
+
+          /*Consulta si existe y genera uno nuevo*/
+          while (count($files) > 0) {
+            $getMime = explode('.', $namefile);
+            $mime = end($getMime);
+            $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
+            $files = DB::table('tbl_Profiles')->where('profile_pic', '=', $randomName )->get();
+          }
+          /*Verifica si existe el directorio si no lo crea*/
+          if(!is_dir($path)){
+            mkdir($path, 0777);
+          }
+
+          /*Subimos el archivo*/
+          $file->move($path, $randomName);
+          $ruta = "assets/admin/pages/media/profile/".$randomName;
+
         }
 
         /*Tipo de usuario*/
         $idtype = DB::table('tbl_Users_Types')->where('type_name', '=', 'Administrador')->value('type_id');
-
         /*Inserta datos*/
         User::create([
            'user_type_fk' => 1,
@@ -88,11 +94,9 @@ class AdmAddUserController extends Controller
 
         /*Consulta el ultimo id del modelo Usuario*/
         $id = User::all() -> last() -> id;
-
-        /*Subimos el archivo*/
-        $file->move($path, $randomName);
-        $ruta = "assets/admin/pages/media/profile/".$randomName;
-
+        if (!isset($ruta)){
+          $ruta = "";
+        }
         /*Agrega perfil*/
         DB::table('tbl_Profiles')->insert([
            'profile_user_id' => $id,

@@ -22,38 +22,37 @@
    <div class="col-md-12">
      <div class="full-height-content-body">
        <!-- BEGIN EXAMPLE TABLE PORTLET-->
-<div class="portlet light bordered">
-    <div class="portlet-title">
-        <div class="caption font-green">
-            <i class="icon-settings font-green"></i>
-            <span class="caption-subject bold uppercase"></span>
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-green">
+                    <i class="icon-settings font-green"></i>
+                    <span class="caption-subject bold uppercase"></span>
+                </div>
+                <div class="tools"> </div>
+            </div>
+            <div class="portlet-body">
+                <table class="table table-striped table-bordered table-hover dt-responsive" width="100%" id="sample_1">
+                    <thead>
+                        <tr>
+                            <th class="all"></th>
+                            <th class="min-phone-l">Nombre</th>
+                            <th class="min-tablet">Apellido</th>
+                            <th class="desktop">Correo Electrónico</th>
+                            <th class="none">Rol</th>
+                            <th class="all">Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblUser">
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="tools"> </div>
-    </div>
-    <div class="portlet-body">
-        <table class="table table-striped table-bordered table-hover dt-responsive" width="100%" id="sample_1">
-            <thead>
-                <tr>
-                    <th class="all"></th>
-                    <th class="min-phone-l">Nombre</th>
-                    <th class="min-tablet">Apellido</th>
-                    <th class="desktop">Correo Electrónico</th>
-                    <th class="none">Rol</th>
-                    <th class="all">Accion</th>
-                </tr>
-            </thead>
-            <tbody id="tblUser">
-            </tbody>
-        </table>
-    </div>
-</div>
 <!-- END EXAMPLE TABLE PORTLET-->
      </div>
    <div>
 </div>
 <div class="clearfix"></div>
 <!-- END DASHBOARD STATS 1-->
-
 <script src="{{ asset('assets/admin/js/main/alluser.js') }}" type="text/javascript"></script>
 <script type="text/javascript">
   Layout.initContent();
