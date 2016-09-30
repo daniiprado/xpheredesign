@@ -66,7 +66,7 @@ class AdmAllUserController extends Controller
     public function show(Request $request)
     {
       if($request->ajax()){
-        $users = DB::table('tbl_Users')
+        $users = User::distinct()
                 ->join('tbl_Users_Types', 'tbl_Users.user_type_fk', '=', 'tbl_Users_Types.type_id')
                 ->select('tbl_Users.id', 'tbl_Users.name', 'tbl_Users.user_lastname', 'tbl_Users.email', 'tbl_Users_Types.type_name')
                 ->get();
@@ -140,8 +140,11 @@ class AdmAllUserController extends Controller
     public function destroy(Request $request, $id)
     {
       if($request->ajax()){
+        //User::destroy($id);
+        $user = User::find($id);
+        $user->delete();
         return response()->json([
-          'mensage' => $id
+          'mensage' => 'true'
         ]);
       }
     }

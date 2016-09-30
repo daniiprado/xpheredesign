@@ -33,7 +33,7 @@ Route::resource('alluser', 'AdmAllUserController'); /* Direcciona pagina admin/u
 Route::get('alluser/all', 'AdmAllUserController@show'); /* Direcciona pagina admin/usuario/todos los usuarios, muestra todos los usuarios*/
 Route::get('edituser/{id}', 'AdmAllUserController@edit'); /*Direciona vista de  Modificar usuario*/
 Route::post('updateuser/{id}', 'AdmAllUserController@update'); /*Direciona vista de  Modificar usuario*/
-Route::post('deleteuser/{id}', 'AdmAllUserController@destroy'); /*Eliminar usuario*/
+Route::delete('deleteuser/{id}', 'AdmAllUserController@destroy'); /*Eliminar usuario*/
 
 Route::resource('adduser', 'AdmAddUserController'); /* Direcciona pagina admin/usuario/agregar nuevo*/
 Route::post('adduser/register', 'AdmAddUserController@store'); /* Registra nueva usuario*/

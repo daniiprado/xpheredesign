@@ -18,8 +18,23 @@ function remove(btn){
   var id = value.substring(4);
 
   var route = "/xpheredesign/public/deleteuser/"+id+"/";
-  //Layout.loadAjaxContent('route');
-  //$('.page-content-body').load(route);
+  var token = $("#token").val();
+
+  $.ajax({
+      url: route,
+      headers: {'X-CSRF-TOKEN': token},
+      type: 'DELETE',
+      dataType: 'json',
+    }).done(function( data, textStatus, jqXHR ) {
+      /*Activamos el boton de alerta*/
+      var alert= $('#btn-alertdelete');
+      var route = "alluser";
+      alert.trigger('click');
+      $('.page-content-body').load(route);
+      load();
+    }).fail( function( jqXHR ) {
+      alert('error');
+    });
 }
 
 /*Carga la tabla de todos los usuarios*/
@@ -58,7 +73,7 @@ function load(){
 
         tblDatos.append(data);
 		});
-	}).always(function() {
+	}).done(function() {
       TableDatatablesResponsive.init();
   });
 }

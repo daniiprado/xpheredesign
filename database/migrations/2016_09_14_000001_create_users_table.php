@@ -42,6 +42,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken()
                   ->comment('Token para procesar el Inicio de Sesión');
             $table->timestamps();
+            $table->softDeletes();
             // NOTE: Foeirgn Keys
             $table->foreign('user_type_fk')
                   ->references('type_id')
