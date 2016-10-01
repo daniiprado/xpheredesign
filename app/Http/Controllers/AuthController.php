@@ -22,7 +22,7 @@ class AuthController extends Controller
      */
     public function index()
     {
-        return view('index', ['id' => 'Login', 'slid' => 'title']);
+        return view('index', ['id' => 'login', 'slid' => 'title']);
     }
 
     public function logout(Request $request)

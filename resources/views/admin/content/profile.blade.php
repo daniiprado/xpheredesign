@@ -100,35 +100,52 @@
                           <div class="tab-content">
                               <!-- PERSONAL INFO TAB -->
                               <div class="tab-pane active" id="tab_1_1">
-                                  <form role="form" action="#">
-                                    {!! Form:: hidden('iduser', csrf_token(), ['id' => 'iduser', 'class' => 'form-control']) !!}
+                                {!! Form::open(['url' => '#', 'method' => 'POST', 'role' => 'form', 'id' => 'submit_form', 'files' => true])!!}
+                                 {!! Form:: hidden('iduser', csrf_token(), ['id' => 'iduser', 'class' => 'form-control']) !!}
                                       <div class="form-group">
-                                          <label class="control-label">Nombre</label>
-                                          {!! Form:: text('name', null, ['class' => 'form-control', 'id' => 'username']) !!}</div>
+                                          <label class="control-label">Nombre
+                                              <span class="required"> * </span>
+                                          </label>
+                                          {!! Form:: text('name', null, ['class' => 'form-control', 'id' => 'username']) !!}
+                                          <span class="help-block"> Escriba su nombre </span>
+                                      </div>
                                       <div class="form-group">
                                           <label class="control-label">Apellido</label>
-                                          {!! Form:: text('apell', null, ['class' => 'form-control', 'id' => 'userapell']) !!}</div>
+                                            {!! Form:: text('apell', null, ['class' => 'form-control', 'id' => 'userapell']) !!}
+                                          <span class="help-block"> Escriba su apellido </span>
+                                      </div>
                                       <div class="form-group">
                                           <label class="control-label">Numero telefonico</label>
-                                          {!! Form:: text('phone', null, ['class' => 'form-control', 'id' => 'userphone']) !!}</div>
+                                            {!! Form:: text('phone', null, ['class' => 'form-control', 'id' => 'userphone']) !!}
+                                          <span class="help-block"> Escriba su numero telefonico </span>
+                                      </div>
                                       <div class="form-group">
                                           <label class="control-label">Nombre de usuario</label>
-                                          {!! Form:: text('nickname', null, ['class' => 'form-control', 'id' => 'usernickname']) !!}</div>
+                                            {!! Form:: text('nickname', null, ['class' => 'form-control', 'id' => 'usernickname']) !!}
+                                          <span class="help-block"> Escriba su nombre de usuario </span>
+                                      </div>
                                       <div class="form-group">
-                                          <label class="control-label">Correo electronico</label>
-                                          {!! Form:: text('email', null, ['class' => 'form-control', 'id' => 'useremail']) !!}</div>
+                                          <label class="control-label">Correo electronico
+                                              <span class="required"> * </span>
+                                          </label>
+                                            {!! Form:: text('email', null, ['class' => 'form-control', 'id' => 'useremail']) !!}
+                                          <span class="help-block"> Escriba su correo electronico </span>
+                                      </div>
                                       <div class="form-group">
                                           <label class="control-label">Información</label>
-                                          {!! Form:: textarea('userdescrip', null, ['class' => 'form-control', 'rows' => '3', 'id' => 'userdescrip']) !!}
+                                            {!! Form:: textarea('userdescrip', null, ['class' => 'form-control', 'rows' => '3', 'id' => 'userdescrip']) !!}
+                                          <span class="help-block"> Escriba su informacion personal</span>
                                       </div>
                                       <div class="form-group">
                                           <label class="control-label">Sitio web</label>
-                                            {!! Form:: text('web', null, ['class' => 'form-control', 'id' => 'userweb']) !!}</div>
+                                            {!! Form:: text('web', null, ['class' => 'form-control', 'id' => 'userweb']) !!}
+                                          <span class="help-block"> Escriba su sitio web </span>
+                                      </div>
                                       <div class="margiv-top-10">
-                                          <a href="javascript:;" onclick="update()" class="btn green"> Guardar </a>
+                                          <a href="javascript:;" class="btn green" id="btn-submit"> Guardar </a>
                                           <a href="javascript:;" class="btn default"> Cancelar </a>
                                       </div>
-                                  </form>
+                                  {!! Form::close() !!}
                               </div>
                               <!-- END PERSONAL INFO TAB -->
                               <!-- CHANGE AVATAR TAB -->
@@ -152,21 +169,33 @@
                               <!-- END CHANGE AVATAR TAB -->
                               <!-- CHANGE PASSWORD TAB -->
                               <div class="tab-pane" id="tab_1_3">
-                                  <form action="#">
-                                      <div class="form-group">
-                                          <label class="control-label">Contraseña actual</label>
-                                          <input type="password" class="form-control" /> </div>
-                                      <div class="form-group">
-                                          <label class="control-label">Contraseña nueva</label>
-                                          <input type="password" class="form-control" /> </div>
-                                      <div class="form-group">
-                                          <label class="control-label">Reescriba nueva contraseña</label>
-                                          <input type="password" class="form-control" /> </div>
-                                      <div class="margin-top-10">
-                                          <a href="javascript:;" class="btn green"> Cambiar contraseña </a>
-                                          <a href="javascript:;" class="btn default"> Cancelar </a>
-                                      </div>
-                                  </form>
+                                  {!! Form::open(['url' => '#', 'method' => 'POST', 'role' => 'form', 'id' => 'submit_password', 'files' => true])!!}
+                                    <div class="form-group">
+                                        <label class="control-label">Contraseña actual
+                                            <span class="required"> * </span>
+                                        </label>
+                                        {!! Form:: password('password', ['class' => 'form-control', 'id' => 'password']) !!}
+                                        <span class="help-block"> Escriba su contraseña actual </span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Contraseña nueva
+                                            <span class="required"> * </span>
+                                        </label>
+                                          {!! Form:: password('newpassword', ['class' => 'form-control', 'id' => 'newpassword']) !!}
+                                        <span class="help-block"> Escriba su nueva contraseña </span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Reescriba nueva contraseña
+                                            <span class="required"> * </span>
+                                        </label>
+                                          {!! Form:: password('rnewpassword', ['class' => 'form-control', 'id' => 'rnewpassword']) !!}
+                                        <span class="help-block"> Escriba su nueva contraseña  </span>
+                                    </div>
+                                    <div class="margin-top-10">
+                                        <a href="javascript:;" class="btn green" id="btn-password"> Cambiar contraseña </a>
+                                        <a href="javascript:;" class="btn default"> Cancelar </a>
+                                    </div>
+                                  {!! Form::close() !!}
                               </div>
                               <!-- END CHANGE PASSWORD TAB -->
                           </div>

@@ -151,17 +151,7 @@
                                                         <label class="control-label col-md-3">Tipo de usuario</label>
                                                         <div class="col-md-4">
                                                             <select name="typeuser" id="country_list" class="form-control">
-                                                                <option value=""></option>
-                                                                <option value="AF">Afghanistan</option>
-                                                                <option value="AL">Albania</option>
-                                                                <option value="DZ">Algeria</option>
-                                                                <option value="AS">American Samoa</option>
-                                                                <option value="AD">Andorra</option>
-                                                                <option value="AO">Angola</option>
-                                                                <option value="AI">Anguilla</option>
-                                                                <option value="AR">Argentina</option>
-                                                                <option value="AM">Armenia</option>
-                                                                <option value="AW">Aruba</option>
+                                                                <option value=""></option>                
                                                             </select>
                                                         </div>
                                                     </div>

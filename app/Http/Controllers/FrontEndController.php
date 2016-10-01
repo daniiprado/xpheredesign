@@ -15,7 +15,7 @@ class FrontEndController extends Controller
      */
     public function index()
     {
-        return view('index', ['id' => 'Index', 'slid' => 'slider']);
+        return view('index', ['id' => 'index', 'slid' => 'slider']);
     }
 
     /**

@@ -9,6 +9,7 @@ use xpheredesign\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use xpheredesign\User;
 use xpheredesign\Profiles;
+use xpheredesign\Users_Types;
 use xpheredesign\Signin_Social;
 
 class AdmAddUserController extends Controller
@@ -79,11 +80,9 @@ class AdmAddUserController extends Controller
 
         }
 
-        /*Tipo de usuario*/
-        $idtype = DB::table('tbl_Users_Types')->where('type_name', '=', 'Administrador')->value('type_id');
         /*Inserta datos*/
         User::create([
-           'user_type_fk' => $idtype,
+           'user_type_fk' => $request->get('typeuser'),
            'user_nickname' => $request->get('user_nickname'),
            'name' => $request->get('name'),
            'user_phone' => $request->get('user_phone'),
@@ -115,6 +114,22 @@ class AdmAddUserController extends Controller
       }else{
         return response()->json([
           'error' => 'error'
+        ]);
+      }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showType(Request $request)
+    {
+      if($request->ajax()){
+        $types = Users_Types::get();
+        return response()->json([
+            $types->toArray()
         ]);
       }
     }

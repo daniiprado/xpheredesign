@@ -245,7 +245,7 @@ var FormWizardAdd = function () {
               var password = $('input:password[id=submit_form_password]').val();
               var email = $('input:text[id=useremail]').val();
               var nickname = $('input:text[id=usernikname]').val();
-              var typeuser = $('input:text[id=country_list]').val();
+              var typeuser = $('#country_list').val();
               var web = $('input:text[id=userweb]').val();
               var description = $('#userremarks').val();
               /*Imagen*/
@@ -303,4 +303,23 @@ var FormWizardAdd = function () {
 
 jQuery(document).ready(function() {
     FormWizardAdd.init();
+    onloadType();
 });
+
+/*Carga los tiempos de usuario*/
+function onloadType(){
+  var option = $("#country_list");
+  var route = "/xpheredesign/public/typeuser";
+  $("#country_list").empty();
+
+  $.get(route, function(res){
+   $(res).each(function(key,value){
+      option.append($('<option>',{
+        value: value[0].type_id,
+        text: value[0].type_name
+      }));
+    });
+  }).done(function() {
+
+  });
+}

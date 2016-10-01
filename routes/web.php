@@ -38,6 +38,7 @@ Route::delete('deleteuser/{id}', 'AdmAllUserController@destroy'); /*Eliminar usu
 
 Route::resource('adduser', 'AdmAddUserController'); /* Direcciona pagina admin/usuario/agregar nuevo*/
 Route::post('adduser/register', 'AdmAddUserController@store'); /* Registra nueva usuario*/
+Route::get('typeuser', 'AdmAddUserController@showType'); /* Consulta los tipos de usuario*/
 
 Route::resource('typesusers', 'AdmTypesUserController'); /* Direcciona pagina admin/usuario/todos los usuarios*/
 Route::resource('typesuser/all', 'AdmTypesUserController@show'); /*Muestra todos los usuarios*/
