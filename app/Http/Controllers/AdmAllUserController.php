@@ -83,19 +83,19 @@ class AdmAllUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $id)
-    {
-      if($request->ajax()){
-         $users = DB::table('tbl_Users')
-                 ->join('tbl_Profiles', 'tbl_Profiles.profile_user_id', '=', 'tbl_Users.id')
-                 ->join('tbl_Users_Types', 'tbl_Users.user_type_fk', '=', 'tbl_Users_Types.type_id')
-                 ->select('tbl_Users.*', 'tbl_Users_Types.type_name', 'tbl_Profiles.profile_pic', 'tbl_Profiles.profile_description')
-                 ->where('tbl_Users.id', '=', $id)
-                 ->get();
+     public function edit(Request $request, $id)
+     {
+       if($request->ajax()){
+          $users = DB::table('tbl_Users')
+                  ->join('tbl_Profiles', 'tbl_Profiles.profile_user_id', '=', 'tbl_Users.id')
+                  ->join('tbl_Users_Types', 'tbl_Users.user_type_fk', '=', 'tbl_Users_Types.type_id')
+                  ->select('tbl_Users.*', 'tbl_Users_Types.type_name', 'tbl_Profiles.profile_pic', 'tbl_Profiles.profile_description')
+                  ->where('tbl_Users.id', '=', $id)
+                  ->get();
 
-        return view('admin.content.edituser', ['users' => $users]);
-      }
-    }
+         return view('admin.content.edituser', ['users' => $users]);
+       }
+     }
 
     /**
      * Update the specified resource in storage.
@@ -146,9 +146,6 @@ class AdmAllUserController extends Controller
           $ruta = "assets/admin/pages/media/profile/".$randomName;
         }
 
-        /*Tipo de usuario*/
-        $idtype = DB::table('tbl_Users_Types')->where('type_name', '=', 'Administrador')->value('type_id');
-
         $user = User::find($id);
 
         if($request->get('password') != null){
@@ -159,7 +156,7 @@ class AdmAllUserController extends Controller
         }
 
         $user->fill([
-            'user_type_fk' => $idtype,
+            'user_type_fk' => $request->get('typeuser'),
             'user_nickname' => $request->get('user_nickname'),
             'name' => $request->get('name'),
             'user_phone' => $request->get('user_phone'),
