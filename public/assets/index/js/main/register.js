@@ -12,7 +12,7 @@ tpj(document).ready(function(){
       var repassword = tpj("#register-repassword").val();
 
       if(password==repassword){
-        var route = "/xpheredesign/public/register";
+        var route = "/register";
         var token = tpj("#token").val();
 
         tpj.ajax({
@@ -35,7 +35,7 @@ tpj(document).ready(function(){
           }
         }).done(function( data, textStatus, jqXHR ) {
             if(data.mensaje== 'true'){
-              window.location.href = "/xpheredesign/public/login";
+              window.location.href = "/login";
             }
         }).fail( function( jqXHR ) {
           /*Error de campos*/

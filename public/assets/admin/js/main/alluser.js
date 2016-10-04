@@ -17,7 +17,7 @@ function remove(btn){
   var value = btn.id;
   var id = value.substring(4);
 
-  var route = "/xpheredesign/public/deleteuser/"+id+"/";
+  var route = "/deleteuser/"+id+"/";
   var token = $("#token").val();
 
   $.ajax({
@@ -40,7 +40,7 @@ function remove(btn){
 /*Carga la tabla de todos los usuarios*/
 function load(){
   var tblDatos = $("#tblUser");
-  var route = "/xpheredesign/public/alluser/all";
+  var route = "/alluser/all";
   $("#tblUser").empty();
 
 	$.get(route, function(res){

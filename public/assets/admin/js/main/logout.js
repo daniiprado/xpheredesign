@@ -1,8 +1,8 @@
 function logout(){
-  var route = "/xpheredesign/public/logout";
+  var route = "/logout";
   $.get(route, function(res){
       if(res.message == 'true'){
-        window.location.href = "/xpheredesign/public/login";
+        window.location.href = "/login";
       }
   }).always(function() {
 

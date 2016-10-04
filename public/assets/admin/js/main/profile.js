@@ -3,7 +3,7 @@ $(document).ready(function(){
 });
 /*Carga la tabla de todos los usuarios*/
 function load(){
-  var route = "/xpheredesign/public/profile/all";
+  var route = "/profile/all";
 	$.get(route, function(res){
 
     $("#divname").html(res.user[0].name);
@@ -52,7 +52,7 @@ function update(){
   formData.append("profile_description", description);
   formData.append("filename", file);
 
-  var route = "/xpheredesign/public/profile/update/"+id;
+  var route = "/profile/update/"+id;
   var token = $("#token").val();
   $.ajax({
     url: route,

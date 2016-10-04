@@ -265,7 +265,7 @@ var FormWizardAdd = function () {
               formData.append("profile_description", description);
               formData.append("filename", file);
 
-              var route = "/xpheredesign/public/adduser/register";
+              var route = "/adduser/register";
               var token = $("#token").val();
               $.ajax({
                 url: route,
@@ -309,7 +309,7 @@ jQuery(document).ready(function() {
 /*Carga los tiempos de usuario*/
 function onloadType(){
   var option = $("#country_list");
-  var route = "/xpheredesign/public/typeuser";
+  var route = "/typeuser";
   $("#country_list").empty();
 
   $.get(route, function(res){
