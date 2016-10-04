@@ -8,7 +8,7 @@ tpj(document).ready(function(){
       var email = tpj("#login-username").val();
       var password = tpj("#login-password").val();
 
-      var route = "/xpheredesign/public/log";
+      var route = "/log";
       var token = tpj("#token").val();
 
       tpj.ajax({
@@ -28,7 +28,7 @@ tpj(document).ready(function(){
       }).done(function( data, textStatus, jqXHR ) {
           if(data.message == 'true'){
             /*Contraseña correcta*/
-            window.location.href = "/xpheredesign/public/admin";
+            window.location.href = "/admin";
           }else{
             tpj( '#log-email' ).addClass('has-error');
             tpj( '#log-password' ).addClass('has-error');
