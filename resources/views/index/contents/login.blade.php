@@ -17,7 +17,7 @@
         </div>
 
         <div class="col_full nobottommargin">
-      <button class="button button-3d button-black nomargin" id="btn-login" name="register-form-submit" value="register">Register Now</button>
+      <button class="button button-3d button-black nomargin" id="btn-login" name="register-form-submit" value="login">LogIn</button>
           <a href="{{ url('facebook') }}" class="social-icon si-facebook">
           	<i class="icon-facebook"></i>
           	<i class="icon-facebook"></i>
