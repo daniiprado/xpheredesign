@@ -11,8 +11,8 @@
       <!-- Logo
       ============================================= -->
       <div id="logo">
-        <a href="{{ url('/') }}" class="standard-logo" data-dark-logo="{{ asset ('assets/index/images/logo-dark.png')}}"><img src="{{ asset ('assets/index/images/logo.png')}}" alt="Canvas Logo"></a>
-        <a href="{{ url('/') }}" class="retina-logo" data-dark-logo="{{asset('assets/index/images/logo-dark@2x.png')}}"><img src="{{ asset('assets/index/images/logo@2x.png') }}" alt="Canvas Logo"></a>
+        <a href="{{ url('/') }}" class="standard-logo" data-dark-logo="{{ secure_asset('assets/index/images/logo-dark.png')}}"><img src="{{ asset ('assets/index/images/logo.png')}}" alt="Canvas Logo"></a>
+        <a href="{{ url('/') }}" class="retina-logo" data-dark-logo="{{secure_asset('assets/index/images/logo-dark@2x.png')}}"><img src="{{ secure_asset('assets/index/images/logo@2x.png') }}" alt="Canvas Logo"></a>
       </div><!-- #logo end -->
 
       <!-- Primary Navigation
@@ -297,7 +297,7 @@
                             <img src="{{ asset ('assets/index/images/portfolio/4/1.jpg')}}" alt="Open Imagination">
                           </a>
                           <div class="portfolio-overlay">
-                            <a href="{{asset('assets/index/images/portfolio/full/1.jpg')}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+                            <a href="{{secure_asset('assets/index/images/portfolio/full/1.jpg')}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
                             <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
                           </div>
                         </div>
@@ -310,7 +310,7 @@
                       <article class="portfolio-item pf-graphics pf-uielements">
                         <div class="portfolio-image">
                           <a href="#">
-                            <img src="{{asset('assets/index/images/portfolio/4/3.jpg')}}" alt="Mac Sunglasses">
+                            <img src="{{secure_asset('assets/index/images/portfolio/4/3.jpg')}}" alt="Mac Sunglasses">
                           </a>
                           <div class="portfolio-overlay">
                             <a href="http://vimeo.com/89396394" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
@@ -326,15 +326,15 @@
                       <article class="portfolio-item pf-icons pf-illustrations">
                         <div class="portfolio-image">
                           <a href="portfolio-single.html">
-                            <img src="{{asset('assets/index/images/portfolio/4/4.jpg')}}" alt="Morning Dew">
+                            <img src="{{secure_asset('assets/index/images/portfolio/4/4.jpg')}}" alt="Morning Dew">
                           </a>
                           <div class="portfolio-overlay">
-                            <a href="{{asset('assets/index/images/portfolio/full/6.jpg')}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+                            <a href="{{secure_asset('assets/index/images/portfolio/full/6.jpg')}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
                             <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
                           </div>
                           <div class="portfolio-overlay" data-lightbox="gallery">
-                            <a href="{{asset('assets/index/images/portfolio/full/4.jpg')}}" class="left-icon" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
-                            <a href="{{asset('assets/index/images/portfolio/full/4-1.jpg')}}" class="hidden" data-lightbox="gallery-item"></a>
+                            <a href="{{secure_asset('assets/index/images/portfolio/full/4.jpg')}}" class="left-icon" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
+                            <a href="{{secure_asset('assets/index/images/portfolio/full/4-1.jpg')}}" class="hidden" data-lightbox="gallery-item"></a>
                             <a href="portfolio-single-gallery.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
                           </div>
                         </div>
@@ -347,10 +347,10 @@
                       <article class="portfolio-item pf-uielements pf-media">
                         <div class="portfolio-image">
                           <a href="portfolio-single.html">
-                            <img src="{{asset('assets/index/images/portfolio/4/5.jpg')}}" alt="Console Activity ">
+                            <img src="{{secure_asset('assets/index/images/portfolio/4/5.jpg')}}" alt="Console Activity ">
                           </a>
                           <div class="portfolio-overlay">
-                            <a href="{{asset('assets/index/images/portfolio/full/5.jpg')}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+                            <a href="{{secure_asset('assets/index/images/portfolio/full/5.jpg')}}" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
                             <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
                           </div>
                         </div>
@@ -363,13 +363,13 @@
                       <article class="portfolio-item pf-graphics pf-illustrations">
                         <div class="portfolio-image">
                           <a href="portfolio-single.html">
-                            <img src="{{asset('assets/index/images/portfolio/4/6.jpg')}}" alt="Shake It!">
+                            <img src="{{secure_asset('assets/index/images/portfolio/4/6.jpg')}}" alt="Shake It!">
                           </a>
                           <div class="portfolio-overlay" data-lightbox="gallery">
-                            <a href="{{asset('assets/index/images/portfolio/full/6.jpg')}}" class="left-icon" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
-                            <a href="{{asset('assets/index/images/portfolio/full/6-1.jpg')}}" class="hidden" data-lightbox="gallery-item"></a>
-                            <a href="{{asset('assets/index/images/portfolio/full/6-2.jpg')}}" class="hidden" data-lightbox="gallery-item"></a>
-                            <a href="{{asset('assets/index/images/portfolio/full/6-3.jpg')}}" class="hidden" data-lightbox="gallery-item"></a>
+                            <a href="{{secure_asset('assets/index/images/portfolio/full/6.jpg')}}" class="left-icon" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
+                            <a href="{{secure_asset('assets/index/images/portfolio/full/6-1.jpg')}}" class="hidden" data-lightbox="gallery-item"></a>
+                            <a href="{{secure_asset('assets/index/images/portfolio/full/6-2.jpg')}}" class="hidden" data-lightbox="gallery-item"></a>
+                            <a href="{{secure_asset('assets/index/images/portfolio/full/6-3.jpg')}}" class="hidden" data-lightbox="gallery-item"></a>
                             <a href="portfolio-single-gallery.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
                           </div>
                         </div>

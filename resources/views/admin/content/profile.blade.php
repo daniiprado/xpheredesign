@@ -211,7 +211,7 @@
 <div class="clearfix"></div>
 <button id="btn-alertprofile" class="btn btn-success mt-sweetalert" data-title="Usuario Creado Correctamente" data-message="..." data-type="success" data-allow-outside-click="true" data-confirm-button-class="btn-success" style="visibility:hidden;">Icon Success Alert</button>
 <!-- END DASHBOARD STATS 1-->
-<script src="{{ asset('assets/admin/js/main/profile.js') }}" type="text/javascript"></script>
+<script src="{{ secure_asset('assets/admin/js/main/profile.js') }}" type="text/javascript"></script>
 <script type="text/javascript">
   Layout.initContent();
 </script>
