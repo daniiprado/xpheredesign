@@ -3,7 +3,7 @@
 
 <!-- Stylesheets
 ============================================= -->
-<link href="{{ secure_asset('http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic') }}" rel="stylesheet" type="text/css" />
+<link href="{{ secure_asset('https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic') }}" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="{{ secure_asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') }}" type="text/css" />
 <link rel="stylesheet" href="{{ secure_asset('assets/index/style.css') }}" type="text/css" />
 <link rel="stylesheet" href="{{ secure_asset('assets/index/css/swiper.css')}}" type="text/css" />
