@@ -26,6 +26,9 @@ class CreateBlogsTable extends Migration
         $table->integer('blog_privacy_fk')
               ->unsigned()
               ->comment('Identificador de la privacidad del Blog');
+        $table->integer('blog_states_fk')
+              ->unsigned()
+              ->comment('Identificador de estado del Blog');
         $table->string('blog_title', 600)
               ->comment('Título del Blog');
         $table->longText('blog_content')
@@ -41,6 +44,9 @@ class CreateBlogsTable extends Migration
         $table->foreign('blog_privacy_fk')
               ->references('privacy_id')
               ->on('tbl_Privacy');
+        $table->foreign('blog_states_fk')
+              ->references('state_id')
+              ->on('tbl_States');
       });
     }
 

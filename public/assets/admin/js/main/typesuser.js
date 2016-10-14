@@ -4,7 +4,7 @@ $(document).ready(function(){
 /*Carga la tabla de todos los usuarios*/
 function load(){
   var tblDatos = $("#tblTypes");
-  var route = "/typesuser/all";
+  var route = "/xpheredesign/public/typesuser/all";
   $("#tblTypes").empty();
 
 	$.get(route, function(res){

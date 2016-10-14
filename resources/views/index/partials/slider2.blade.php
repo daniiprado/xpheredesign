@@ -20,8 +20,8 @@
           </div>
           <div class="video-wrap">
             <video id="slide-video" poster="{{('assets/index/images/videos/explore.jpg')}}" preload="auto" loop autoplay muted>
-              <source src="{{secure_asset('assets/index/images/videos/explore.webm')}}" type='video/webm' />
-              <source src="{{secure_asset('assets/index/images/videos/explore.mp4')}}" type='video/mp4' />
+              <source src="{{asset('assets/index/images/videos/explore.webm')}}" type='video/webm' />
+              <source src="{{asset('assets/index/images/videos/explore.mp4')}}" type='video/mp4' />
             </video>
             <div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
           </div>

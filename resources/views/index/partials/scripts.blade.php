@@ -1,28 +1,28 @@
 <!-- External JavaScripts
 ============================================= -->
-<script type="text/javascript" src="{{ secure_asset('https://code.jquery.com/jquery-2.2.4.min.js') }}"></script>
-<script type="text/javascript" src="{{ secure_asset('assets/index/js/plugins.js') }}"></script>
+<script type="text/javascript" src="{{ asset('https://code.jquery.com/jquery-2.2.4.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/index/js/plugins.js') }}"></script>
 
 <!-- Footer Scripts
 ============================================= -->
-<script type="text/javascript" src="{{ secure_asset('assets/index/js/functions.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/index/js/functions.js') }}"></script>
 
 
 <!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
-<script type="text/javascript" src="{{secure_asset('assets/index/include/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
-<script type="text/javascript" src="{{secure_asset('assets/index/include/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/index/include/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/index/include/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
 
-<script type="text/javascript" src="{{secure_asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.video.min.js')}}"></script>
-<script type="text/javascript" src="{{secure_asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
-<script type="text/javascript" src="{{secure_asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.actions.min.js')}}"></script>
-<script type="text/javascript" src="{{secure_asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
-<script type="text/javascript" src="{{secure_asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
-<script type="text/javascript" src="{{secure_asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.navigation.min.js')}}"></script>
-<script type="text/javascript" src="{{secure_asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.migration.min.js')}}"></script>
-<script type="text/javascript" src="{{secure_asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.parallax.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.video.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.actions.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.navigation.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.migration.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('assets/index/include/rs-plugin/js/extensions/revolution.extension.parallax.min.js')}}"></script>
 
-<script type="text/javascript" src="{{ secure_asset('assets/index/js/main/register.js') }}"></script>
-<script type="text/javascript" src="{{ secure_asset('assets/index/js/main/login.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/index/js/main/register.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/index/js/main/login.js') }}"></script>
 
 <script type="text/javascript">
 

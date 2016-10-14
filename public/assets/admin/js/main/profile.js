@@ -1,9 +1,6 @@
-$(document).ready(function(){
-  load();
-});
 /*Carga la tabla de todos los usuarios*/
 function load(){
-  var route = "/profile/all";
+  var route = "/xpheredesign/public/profile/all";
 	$.get(route, function(res){
 
     $("#divname").html(res.user[0].name);
@@ -20,7 +17,7 @@ function load(){
     $("#userphone").val(res.user[0].user_phone);
     $("#usernickname").val(res.user[0].user_nickname);
     $("#useremail").val(res.user[0].email);
-    $("#userdescription").val(res.user[0].profile_description);
+    $("#userdescrip").val(res.user[0].profile_description);
     $("#userweb").val(res.user[0].user_web);
 
 	}).always(function() {
@@ -34,10 +31,10 @@ function update(){
   var name = $('input:text[id=username]').val();
   var apell = $('input:text[id=userapell]').val();
   var phone = $('input:text[id=userphone]').val();
-  var nickname = $('input:text[id=usernikname]').val();
+  var nickname = $('input:text[id=usernickname]').val();
   var email = $('input:text[id=useremail]').val();
   var web = $('input:text[id=userweb]').val();
-  var description = $('#userremarks').val();
+  var description = $('#userdescrip').val();
   /*Imagen*/
   var FileImage =  document.getElementById("userfile");
   var file= FileImage.files[0];
@@ -52,7 +49,7 @@ function update(){
   formData.append("profile_description", description);
   formData.append("filename", file);
 
-  var route = "/profile/update/"+id;
+  var route = "/xpheredesign/public/profile/update/"+id;
   var token = $("#token").val();
   $.ajax({
     url: route,
@@ -81,6 +78,31 @@ function update(){
   });
 
 }
+function updatePassword(){
+  var id = $("#iduser").val();
+  var password = $('input:password[id=password]').val();
+  var npassword = $('input:password[id=newpassword]').val();
+
+  var route = "/xpheredesign/public/profile/updatePass/"+id;
+  var token = $("#token").val();
+  $.ajax({
+    url: route,
+    headers: {'X-CSRF-TOKEN': token},
+    type: 'POST',
+    dataType: 'json',
+    data: {password: password,
+           npassword: npassword
+          }
+  }).done(function( data, textStatus, jqXHR ) {
+     console.log(data);
+  }).fail( function( jqXHR ) {
+     /*Error de campos*/
+     console.log(jqXHR);
+  }).always(function() {
+     /*Peticion completada*/
+  });
+}
+
 
 var ValidationProfile= function () {
 
@@ -313,7 +335,7 @@ var ValidationPassword = function () {
                 if (form.valid() == false) {
                     return false;
                 }else{
-
+                    updatePassword();
                 }
             });
 
@@ -322,9 +344,61 @@ var ValidationPassword = function () {
     };
 
 }();
+$( "#password" ).change(function( event ) {
+  var pass = $(this).val();
+  var id = $("#iduser").val();
 
+  var route = "/xpheredesign/public/profile/veriPass/"+id;
+  var token = $("#token").val();
+  $.ajax({
+    url: route,
+    headers: {'X-CSRF-TOKEN': token},
+    type: 'POST',
+    dataType: 'json',
+    data: {password: pass}
+
+  }).done(function( data, textStatus, jqXHR ) {
+     console.log(data);
+  }).fail( function( jqXHR ) {
+     /*Error de campos*/
+     console.log(jqXHR);
+  }).always(function() {
+     /*Peticion completada*/
+  });
+});
 
 jQuery(document).ready(function() {
+    load();
     ValidationProfile.init();
     ValidationPassword.init();
 });
+/*Sube imagen automaticamente*/
+/*
+ $(function(){
+    $("input[name='fileimg']").on("change", function(){
+       var id = $("#iduser").val();
+       var FileImage =  document.getElementById("userfile");
+       var file= FileImage.files[0];
+
+       var formData = new FormData();
+       formData.append("name", "name");
+       formData.append("filename", file);
+
+       var route = "/xpheredesign/public/profile/updateImage/"+id;
+       var token = $("#token").val();
+       $.ajax({
+         url: route,
+         headers: {'X-CSRF-TOKEN': token},
+         cache: false,
+         type: 'POST',
+         contentType:false,
+         data: formData,
+         processData:false
+
+       }).done(function( data, textStatus, jqXHR ) {
+         console.log(data);
+       }).fail( function( jqXHR ) {
+         console.log(jqXHR);
+       });
+    });
+ });*/

@@ -56,4 +56,4 @@
   Layout.initContent();
 </script>
 
-<script src="{{ secure_asset('assets/admin/js/main/typesuser.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/admin/js/main/typesuser.js') }}" type="text/javascript"></script>

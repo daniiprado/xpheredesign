@@ -265,7 +265,7 @@ var FormWizardAdd = function () {
               formData.append("profile_description", description);
               formData.append("filename", file);
 
-              var route = "/adduser/register";
+              var route = "/xpheredesign/public/adduser/register";
               var token = $("#token").val();
               $.ajax({
                 url: route,
@@ -309,15 +309,14 @@ jQuery(document).ready(function() {
 /*Carga los tiempos de usuario*/
 function onloadType(){
   var option = $("#country_list");
-  var route = "/typeuser";
+  var route = "/xpheredesign/public/typeuser";
   $("#country_list").empty();
 
   $.get(route, function(res){
    $(res).each(function(key,value){
-      option.append($('<option>',{
-        value: value[0].type_id,
-        text: value[0].type_name
-      }));
+     var options= "<option value='"+value.type_id+"'>"+value .type_name+"</option>"
+     console.log(value.type_name);
+     option.append(options)
     });
   }).done(function() {
 

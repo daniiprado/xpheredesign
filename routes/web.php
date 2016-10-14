@@ -29,6 +29,9 @@ Route::resource('admin', 'BackEndController'); /* Direcciona pagina admin */
 Route::resource('profile', 'AdmProfileUserController'); /* Direcciona pagina admin/usuario/perfil */
 Route::get('profile/all', 'AdmProfileUserController@show'); /* Direcciona pagina admin/usuario/perfil */
 Route::post('profile/update/{id}', 'AdmProfileUserController@update'); /* Direcciona pagina admin/usuario/perfil */
+/*Route::post('profile/updateImage/{id}', 'AdmProfileUserController@updateImg'); /* Sube imagen automaticamente*/
+Route::post('profile/updatePass/{id}', 'AdmProfileUserController@updatePass'); /* Direcciona pagina admin/usuario/perfil */
+Route::post('profile/veriPass/{id}', 'AdmProfileUserController@veriPass'); /* Direcciona pagina admin/usuario/perfil */
 
 Route::resource('alluser', 'AdmAllUserController'); /* Direcciona pagina admin/usuario/todos los usuarios */
 Route::get('alluser/all', 'AdmAllUserController@show'); /* Direcciona pagina admin/usuario/todos los usuarios, muestra todos los usuarios*/
@@ -41,7 +44,14 @@ Route::post('adduser/register', 'AdmAddUserController@store'); /* Registra nueva
 Route::get('typeuser', 'AdmAddUserController@showType'); /* Consulta los tipos de usuario*/
 
 Route::resource('typesusers', 'AdmTypesUserController'); /* Direcciona pagina admin/usuario/todos los usuarios*/
-Route::resource('typesuser/all', 'AdmTypesUserController@show'); /*Muestra todos los usuarios*/
+Route::get('typesuser/all', 'AdmTypesUserController@show'); /*Muestra todos los usuarios*/
+
+Route::resource('allentries', 'AdmAllEntriesController'); /* Direcciona pagina admin/usuario/todos los usuarios*/
+
+Route::resource('addentries', 'AdmAddEntriesController'); /* Direcciona pagina admin/usuario/todos los usuarios*/
+Route::get('categoryEntries', 'AdmAddEntriesController@showCategory'); /* Carga las categorias del blog*/
+Route::get('privateEntries', 'AdmAddEntriesController@showPrivate'); /* Carga la privacidad del blog*/
+Route::get('stateEntries', 'AdmAddEntriesController@showState'); /* Carga el estado del blog*/
 
 /*NotFound*/
 Route::pattern('NotFound', '.*');

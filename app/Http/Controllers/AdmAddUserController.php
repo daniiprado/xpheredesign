@@ -127,10 +127,12 @@ class AdmAddUserController extends Controller
     public function showType(Request $request)
     {
       if($request->ajax()){
-        $types = Users_Types::get();
-        return response()->json([
-            $types->toArray()
-        ]);
+        $types = Users_Types::select(
+                  'tbl_Users_Types.type_id',
+                  'tbl_Users_Types.type_name',
+                  'tbl_Users_Types.type_description'
+                 )->get();
+        return $types;
       }
     }
 

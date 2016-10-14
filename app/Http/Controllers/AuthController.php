@@ -82,7 +82,7 @@ class AuthController extends Controller
     {
 
       if($request->ajax()){
-        $validation = $this->validate($request, [
+        /*$validation = $this->validate($request, [
              'registername' => 'required',
              'regislastname' => 'required',
              'regisemail' => 'required',
@@ -97,12 +97,24 @@ class AuthController extends Controller
                'code' => 422
              ]);
            }
-         }else{
-           User::create($request->all());
+         }else{*/
+           User::create([
+             'user_type_fk' => $request->get('user_type_fk'),
+             'user_nickname' => $request->get('user_nickname'),
+             'name' => $request->get('name'),
+             'email' => $request->get('email'),
+             'password' => bcrypt($request->get('password')),
+             'user_lastname' => $request->get('user_lastname'),
+            ]);
+            $id = User::all() -> last() -> id;
+            Profiles::Create([
+                'profile_user_id' => $id,
+              ]);
+
            return response()->json([
              'message' => 'true'
            ]);
-         }
+         /*}*/
       }else{
         return response()->json([
           'error' => 'error'

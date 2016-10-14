@@ -177,6 +177,112 @@ class AdmProfileUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function updateImg(Request $request, $id)
+    {
+      if($request->ajax()){
+
+        $path = public_path().'/assets/admin/pages/media/profile';
+        $file = Input::file('filename');
+
+        if($file != null){
+          $pic = Profiles::select('tbl_Profiles.profile_pic')
+                ->where('tbl_Profiles.profile_user_id', '=', $id)
+                ->get();
+
+          $urlImg = $pic[0]->profile_pic;
+          /*Verifica si existe y elimina*/
+          if(file_exists($urlImg)){
+            unlink($urlImg);
+          }
+
+          $namefile =  $file->getClientOriginalName();
+          /*Genera un nombre aleatorio*/
+          $getMime = explode('.', $namefile);
+          $mime = end($getMime);
+          $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
+          $files = DB::table('tbl_Profiles')->where('profile_pic', '=', $randomName )->get();
+
+          /*Consulta si existe y genera uno nuevo*/
+          while (count($files) > 0) {
+            $getMime = explode('.', $namefile);
+            $mime = end($getMime);
+            $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
+            $files = DB::table('tbl_Profiles')->where('profile_pic', '=', $randomName )->get();
+          }
+          /*Verifica si existe el directorio si no lo crea*/
+          if(!is_dir($path)){
+            mkdir($path, 0777);
+          }
+
+          /*Subimos el archivo*/
+          $file->move($path, $randomName);
+          $ruta = "assets/admin/pages/media/profile/".$randomName;
+
+          if (isset($ruta)){
+            $profiles = DB::table('tbl_Profiles')
+                ->where('profile_id', $id)
+                ->update(array(
+                  'profile_pic' => $ruta,
+                 ));
+          }
+          return response()->json([
+              'message' => 'true'
+          ]);
+
+        }
+        return response()->json([
+            'message' => 'false'
+        ]);
+
+      }
+
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updatePass(Request $request, $id)
+    {
+      $pass = DB::table('tbl_Users')
+                  ->where('id', $id)
+                  ->update(array(
+                    'password' => bcrypt($request['npassword']),
+                   ));
+      return response()->json([
+          'message' => 'true'
+      ]);
+    }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function veriPass(Request $request, $id)
+    {
+     $user = User::find($id);
+     $pass =  $user->password;
+      if(strcmp($pass, bcrypt($request['password']))){
+        return response()->json([
+            'message' => 'false'
+        ]);
+      }else{
+        return response()->json([
+            'message' => 'true'
+        ]);
+      }
+    }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
         //

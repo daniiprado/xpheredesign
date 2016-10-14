@@ -77,6 +77,66 @@
                   </li>
               </ul>
           </li>
+          <li class="nav-item start ">
+            <a href="javascript:;" class="nav-link nav-toggle">
+                <i class="fa fa-newspaper-o"></i>
+                <span class="title">Blogs</span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu">
+                <li class="nav-item start ">
+                    <a href="allentries" class="ajaxify nav-link">
+                        <i class="icon-user"></i>
+                        <span class="title">Todas las entradas</span>
+                    </a>
+                </li>
+                <li class="nav-item start ">
+                    <a href="addentries" class="ajaxify nav-link">
+                        <i class="fa fa-user-plus"></i>
+                        <span class="title">Añadir nueva</span>
+                    </a>
+                </li>
+                <li class="nav-item start ">
+                    <a href="alluser" class="ajaxify nav-link">
+                        <i class="fa fa-users"></i>
+                        <span class="title">Categorias</span>
+                    </a>
+                </li>
+                <li class="nav-item start ">
+                    <a href="typesusers" class="ajaxify nav-link">
+                        <i class="fa fa-users"></i>
+                        <span class="title">Etiquetas</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item start ">
+          <a href="javascript:;" class="nav-link nav-toggle">
+              <i class="icon-user"></i>
+              <span class="title">Medios</span>
+              <span class="arrow"></span>
+          </a>
+          <ul class="sub-menu">
+              <li class="nav-item start ">
+                  <a href="profile" class="ajaxify nav-link">
+                      <i class="icon-user"></i>
+                      <span class="title">Biblioteca</span>
+                  </a>
+              </li>
+              <li class="nav-item start ">
+                  <a href="adduser" class="ajaxify nav-link">
+                      <i class="fa fa-user-plus"></i>
+                      <span class="title">Añadir nuevo</span>
+                  </a>
+              </li>
+          </ul>
+      </li>
+      <li class="nav-item start ">
+        <a href="javascript:;" class="nav-link nav-toggle">
+            <i class="fa fa-commenting-o"></i>
+            <span class="title">Comentarios</span>
+        </a>
+     </li>
 
         </ul>
         <!-- END SIDEBAR MENU -->

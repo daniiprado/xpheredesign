@@ -8,9 +8,9 @@
     <div class="tp-banner-container rev_slider_wrapper fullscreen-container">
       <div class="tp-banner" >
         <ul>    <!-- SLIDE  -->
-          <li class="dark" data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="{{secure_asset('assets/index/images/slider/rev/main/s1-thumb.jpg')}}"  data-saveperformance="off"  data-title="Welcome to Canvas">
+          <li class="dark" data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="{{asset('assets/index/images/slider/rev/main/s1-thumb.jpg')}}"  data-saveperformance="off"  data-title="Welcome to Canvas">
             <!-- MAIN IMAGE -->
-            <img src="{{secure_asset('assets/index/images/videos/explore.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+            <img src="{{asset('assets/index/images/videos/explore.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
             <!-- LAYERS -->
 
             <!-- LAYER NR. 1 -->
@@ -19,7 +19,7 @@
               data-volume="mute"
               data-videowidth="100%"
               data-videoheight="100%"
-              data-videomp4="{{secure_asset('assets/index/images/videos/explore.mp4')}}"
+              data-videomp4="{{asset('assets/index/images/videos/explore.mp4')}}"
               data-videopreload="preload"
               data-videoloop="none"
               data-forceCover="1"
@@ -88,9 +88,9 @@
             data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap;"><a href="#" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Start Tour</span> <i class="icon-angle-right"></i></a></div>
 
           </li>
-          <li class="dark" data-transition="slideup" data-slotamount="1" data-masterspeed="1000" data-thumb="{{secure_asset('assets/index/images/slider/rev/main/s2-thumb.jpg')}}"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off"  data-title="Unlimited Homepages">
+          <li class="dark" data-transition="slideup" data-slotamount="1" data-masterspeed="1000" data-thumb="{{asset('assets/index/images/slider/rev/main/s2-thumb.jpg')}}"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off"  data-title="Unlimited Homepages">
             <!-- MAIN IMAGE -->
-            <img src="{{secure_asset('assets/index/images/slider/rev/main/s2-bg.jpg')}}"  alt="video_woman_cover3"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+            <img src="{{asset('assets/index/images/slider/rev/main/s2-bg.jpg')}}"  alt="video_woman_cover3"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
             <!-- LAYERS -->
 
             <!-- LAYER NR. 2 -->
@@ -106,7 +106,7 @@
             data-elementdelay="0.01"
             data-endelementdelay="0.1"
             data-endspeed="1000"
-            data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap;"><img src="{{secure_asset('assets/index/images/slider/rev/main/s2-1.png')}}" alt="Image"></div>
+            data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap;"><img src="{{asset('assets/index/images/slider/rev/main/s2-1.png')}}" alt="Image"></div>
 
             <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-7"
             data-x="200"
@@ -120,7 +120,7 @@
             data-elementdelay="0.01"
             data-endelementdelay="0.1"
             data-endspeed="1000"
-            data-endeasing="Power4.easeIn" style="z-index: 4;"><img src="{{secure_asset('assets/index/images/slider/rev/main/s2-2.png')}}" alt="Image"></div>
+            data-endeasing="Power4.easeIn" style="z-index: 4;"><img src="{{asset('assets/index/images/slider/rev/main/s2-2.png')}}" alt="Image"></div>
 
             <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-6"
             data-x="200"
@@ -134,7 +134,7 @@
             data-elementdelay="0.01"
             data-endelementdelay="0.1"
             data-endspeed="1000"
-            data-endeasing="Power4.easeIn" style="z-index: 5;"><img src="{{secure_asset('assets/index/images/slider/rev/main/s2-3.png')}}" alt="Image"></div>
+            data-endeasing="Power4.easeIn" style="z-index: 5;"><img src="{{asset('assets/index/images/slider/rev/main/s2-3.png')}}" alt="Image"></div>
 
             <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-5"
             data-x="200"
@@ -148,7 +148,7 @@
             data-elementdelay="0.01"
             data-endelementdelay="0.1"
             data-endspeed="1000"
-            data-endeasing="Power4.easeIn" style="z-index: 6;"><img src="{{secure_asset('assets/index/images/slider/rev/main/s2-4.png')}}" alt="Image"></div>
+            data-endeasing="Power4.easeIn" style="z-index: 6;"><img src="{{asset('assets/index/images/slider/rev/main/s2-4.png')}}" alt="Image"></div>
 
             <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-4"
             data-x="200"
@@ -162,7 +162,7 @@
             data-elementdelay="0.01"
             data-endelementdelay="0.1"
             data-endspeed="1000"
-            data-endeasing="Power4.easeIn" style="z-index: 7;"><img src="{{secure_asset('assets/index/images/slider/rev/main/s2-5.png')}}" alt="Image"></div>
+            data-endeasing="Power4.easeIn" style="z-index: 7;"><img src="{{asset('assets/index/images/slider/rev/main/s2-5.png')}}" alt="Image"></div>
 
             <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-3"
             data-x="200"
@@ -176,7 +176,7 @@
             data-elementdelay="0.01"
             data-endelementdelay="0.1"
             data-endspeed="1000"
-            data-endeasing="Power4.easeIn" style="z-index: 8;"><img src="{{secure_asset('assets/index/images/slider/rev/main/s2-6.png')}}" alt="Image"></div>
+            data-endeasing="Power4.easeIn" style="z-index: 8;"><img src="{{asset('assets/index/images/slider/rev/main/s2-6.png')}}" alt="Image"></div>
 
             <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-2"
             data-x="200"
@@ -190,7 +190,7 @@
             data-elementdelay="0.01"
             data-endelementdelay="0.1"
             data-endspeed="1000"
-            data-endeasing="Power4.easeIn" style="z-index: 9;"><img src="{{secure_asset('assets/index/images/slider/rev/main/s2-7.png')}}" alt="Image"></div>
+            data-endeasing="Power4.easeIn" style="z-index: 9;"><img src="{{asset('assets/index/images/slider/rev/main/s2-7.png')}}" alt="Image"></div>
 
             <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-1"
             data-x="200"
@@ -204,7 +204,7 @@
             data-elementdelay="0.01"
             data-endelementdelay="0.1"
             data-endspeed="1000"
-            data-endeasing="Power4.easeIn" style="z-index: 10;"><img src="{{secure_asset('assets/index/images/slider/rev/main/s2-8.png')}}" alt="Image"></div>
+            data-endeasing="Power4.easeIn" style="z-index: 10;"><img src="{{asset('assets/index/images/slider/rev/main/s2-8.png')}}" alt="Image"></div>
 
             <div class="tp-caption customin ltl tp-resizeme revo-slider-caps-text"
             data-x="0"
@@ -263,9 +263,9 @@
             data-endeasing="Power4.easeIn" style="z-index: 11;"><a href="#" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Check Now</span> <i class="icon-angle-right"></i></a></div>
 
           </li>
-          <li data-transition="slideup" data-slotamount="1" data-masterspeed="1500" data-thumb="{{secure_asset('assets/index/images/slider/rev/main/s3-thumb.jpg')}}" data-delay="10000"  data-saveperformance="off"  data-title="Responsive &amp; Retina">
+          <li data-transition="slideup" data-slotamount="1" data-masterspeed="1500" data-thumb="{{asset('assets/index/images/slider/rev/main/s3-thumb.jpg')}}" data-delay="10000"  data-saveperformance="off"  data-title="Responsive &amp; Retina">
             <!-- MAIN IMAGE -->
-            <img src="{{secure_asset('assets/index/images/slider/rev/main/s3.jpg')}}"  alt="kenburns6"  data-bgposition="left top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="130" data-scaleend="100" data-bgpositionend="right bottom">
+            <img src="{{asset('assets/index/images/slider/rev/main/s3.jpg')}}"  alt="kenburns6"  data-bgposition="left top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="130" data-scaleend="100" data-bgpositionend="right bottom">
             <!-- LAYERS -->
 
             <!-- LAYER NR. 2 -->

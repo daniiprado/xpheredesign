@@ -12,9 +12,9 @@ tpj(document).ready(function(){
       var repassword = tpj("#register-repassword").val();
 
       if(password==repassword){
-        var route = "/register";
+        var route = "/xpheredesign/public/register";
         var token = tpj("#token").val();
-
+        
         tpj.ajax({
           url: route,
           headers: {'X-CSRF-TOKEN': token},
@@ -26,16 +26,12 @@ tpj(document).ready(function(){
                  user_lastname: lastname,
                  email: email,
                  password: password
-                },
-          succes: function(data, textStatus, jqXHR){
+                }
 
-          },
-          error: function(msj){
-
-          }
         }).done(function( data, textStatus, jqXHR ) {
-            if(data.mensaje== 'true'){
-              window.location.href = "/login";
+          var messsage = data.message;
+            if(messsage == "true"){
+              window.location.href = "/xpheredesign/public/login";
             }
         }).fail( function( jqXHR ) {
           /*Error de campos*/
